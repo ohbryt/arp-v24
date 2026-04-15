@@ -1,0 +1,9 @@
+# ARP v24 - Minimum dependencies
+# Core (required)
+httpx>=0.24.0
+pandas>=2.0.0
+numpy>=1.24.0
+
+# Optional
+# rdkit  # conda install -c rdkit rdkit
+# chemprop  # pip install chemprop
