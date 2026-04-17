@@ -1,0 +1,36 @@
+{
+  "compound_name": "FoliStatin-X",
+  "components": [
+    "Epicatechin (Green Tea)",
+    "Quercetin (Onions/Apples)",
+    "Curcumin (Turmeric)",
+    "Resveratrol (Grapes/Berries)"
+  ],
+  "mechanisms": [
+    "MSTN inhibition",
+    "AMPK activation",
+    "Anti-inflammatory",
+    "Mitochondrial protection"
+  ],
+  "development_phase": "Preclinical",
+  "timeline": {
+    "extraction_optimization": "2026 Q2",
+    "in_vitro_testing": "2026 Q3",
+    "in_vivo_testing": "2026 Q4",
+    "clinical_preparation": "2027 Q1"
+  },
+  "natural_sources": {
+    "epicatechin": "Camellia sinensis (Green tea)",
+    "quercetin": "Allium cepa (Onions), Malus domestica (Apples)",
+    "curcumin": "Curcuma longa (Turmeric)",
+    "resveratrol": "Vitis vinifera (Grapes), Vaccinium species (Berries)"
+  },
+  "extraction_method": "Supercritical CO2 + Nano-encapsulation",
+  "bioavailability_target": "85%",
+  "expected_outcomes": {
+    "muscle_mass_increase": "15-20%",
+    "strength_improvement": "25-30%",
+    "inflammation_reduction": "40%",
+    "mitochondrial_function": "30% improvement"
+  }
+}

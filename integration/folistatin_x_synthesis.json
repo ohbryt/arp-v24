@@ -1,0 +1,44 @@
+{
+  "priority_compounds": [
+    {
+      "compound": "Epicatechin",
+      "extraction_source": "Green tea leaves",
+      "quantity_needed": "1kg",
+      "purity_requirement": "95%",
+      "synthesis_method": "Ethanol extraction + column chromatography"
+    },
+    {
+      "compound": "Quercetin",
+      "extraction_source": "Onion skins",
+      "quantity_needed": "500g",
+      "purity_requirement": "90%",
+      "synthesis_method": "Methanol extraction + HPLC purification"
+    },
+    {
+      "compound": "Curcumin",
+      "extraction_source": "Turmeric rhizomes",
+      "quantity_needed": "2kg",
+      "purity_requirement": "95%",
+      "synthesis_method": "Supercritical CO2 extraction"
+    },
+    {
+      "compound": "Resveratrol",
+      "extraction_source": "Grape skins",
+      "quantity_needed": "300g",
+      "purity_requirement": "90%",
+      "synthesis_method": "Ethanol extraction + crystallization"
+    }
+  ],
+  "formulation_strategy": {
+    "nano_encapsulation": "Liposomal delivery system",
+    "stability_enhancement": "Antioxidant additives",
+    "bioavailability_boost": "Piperine co-administration"
+  },
+  "testing_sequence": [
+    "1. In vitro myotube protection assay",
+    "2. MSTN inhibition assay",
+    "3. Anti-inflammatory testing",
+    "4. Mitochondrial function assays",
+    "5. In vivo mouse model testing"
+  ]
+}

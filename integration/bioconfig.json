@@ -1,0 +1,29 @@
+{
+  "servers": {
+    "pubchem": {
+      "url": "http://localhost:8001",
+      "tools": [
+        "search_compound",
+        "get_compound_details",
+        "get_compound_properties"
+      ]
+    },
+    "chembl": {
+      "url": "http://localhost:8002",
+      "tools": [
+        "search_molecule",
+        "get_molecule_details",
+        "get_bioactivities"
+      ]
+    },
+    "uniprot": {
+      "url": "http://localhost:8003",
+      "tools": [
+        "search_protein",
+        "get_protein_details"
+      ]
+    }
+  },
+  "timeout": 30,
+  "retry_attempts": 3
+}

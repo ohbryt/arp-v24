@@ -1,0 +1,10 @@
+{
+  "claire_path": "/opt/cvgalvin/CLAIRE",
+  "rosetta_path": "/opt/rosetta",
+  "proteinmpnn_path": "/opt/proteinmpnn",
+  "colabfold_path": "/opt/colabfold",
+  "max_designs": 50,
+  "clustering_threshold": 0.7,
+  "binding_site_residues": 10,
+  "simulation_mode": true
+}
