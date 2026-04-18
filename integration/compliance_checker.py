@@ -51,6 +51,9 @@ class GuidelineType(Enum):
     PROTOCOL = "protocol"
     QUALITY = "quality"
     RISK_OF_BIAS = "risk_of_bias"
+    RADIOMICS = "radiomics"
+    CROSS_NATIONAL = "cross_national"
+    NHIS_COHORT = "nhis_cohort"
 
 
 # Supported guidelines with metadata
