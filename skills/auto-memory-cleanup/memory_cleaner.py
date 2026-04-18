@@ -179,7 +179,7 @@ def detect_stale_references(files: List[Path], known_targets: Set[str]) -> List[
     
     return stale
 
-def detect_transient_content(files: List[Path]) -> List[Tuple[Path, List[str]]]]:
+def detect_transient_content(files):
     """Detect transient/session-specific content"""
     transient_patterns = [
         "currently working", "todo:", "fixme:", "temp:",
