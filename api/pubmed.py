@@ -1,20 +1,34 @@
 """
 ARP v24 - PubMed + ClinicalTrials.gov Integration
 
-Real API calls to NCBI E-utilities and ClinicalTrials.gov v2.
+Phase 5 improvements:
+- Async method as primary implementation
+- Safe sync wrapper (ThreadPoolExecutor for running event loops)
+- Structured fetch status reporting
+- Robust ClinicalTrials parsing
 """
 
 import json
 import os
 import asyncio
+import concurrent.futures
 from dataclasses import dataclass, field
 from typing import Dict, List, Optional, Any
+from enum import Enum
 
 try:
     import httpx
     HAS_HTTPX = True
 except ImportError:
     HAS_HTTPX = False
+
+
+class FetchStatus(Enum):
+    """Structured fetch status."""
+    SUCCESS = "success"
+    PARTIAL = "partial"
+    FAILED = "failed"
+    SKIPPED = "skipped"  # httpx not available
 
 
 @dataclass
@@ -107,7 +121,7 @@ class PubMedClient:
 
 
 class ClinicalTrialsClient:
-    """ClinicalTrials.gov API v2"""
+    """ClinicalTrials.gov API v2 - Robust parsing"""
     BASE = "https://clinicaltrials.gov/api/v2"
 
     async def search(self, condition: str, intervention: Optional[str] = None, max_results: int = 10) -> List[ClinicalTrial]:
@@ -119,20 +133,40 @@ class ClinicalTrialsClient:
                 r = await client.get(f"{self.BASE}/studies", params={"query.term": q, "pageSize": str(max_results)})
                 r.raise_for_status()
                 trials = []
-                for s in r.json().get("studies", []):
+                data = r.json()
+                for s in data.get("studies", []):
                     try:
+                        # Robust parsing with safe .get() calls
                         p = s.get("protocolSection", {})
                         ident = p.get("identificationModule", {})
                         status = p.get("statusModule", {})
                         design = p.get("designModule", {})
+
+                        # Safe phase extraction
                         phases = design.get("phases", ["Unknown"])
-                        if isinstance(phases, str): phases = [phases]
+                        if isinstance(phases, str):
+                            phases = [phases]
+
+                        # Safe enrollment extraction
                         enr = design.get("enrollmentInfo", {})
+                        if isinstance(enr, dict):
+                            enrollment = enr.get("count", 0) or 0
+                        else:
+                            enrollment = 0
+
+                        # Safe conditions/interventions extraction
+                        conditions = ident.get("conditions", [])
+                        if not isinstance(conditions, list):
+                            conditions = []
+
                         trials.append(ClinicalTrial(
-                            ident.get("nctId", ""), ident.get("briefTitle", ""),
-                            "/".join(str(x) for x in phases), status.get("overallStatus", ""),
-                            ident.get("conditions", [])[:5], [],
-                            enr.get("count", 0) if isinstance(enr, dict) else 0,
+                            ident.get("nctId", "") or "",
+                            ident.get("briefTitle", "") or "",
+                            "/".join(str(x) for x in phases) if phases else "Unknown",
+                            status.get("overallStatus", "") or "Unknown",
+                            conditions[:5],
+                            [],
+                            enrollment,
                         ))
                     except Exception:
                         continue
@@ -143,57 +177,98 @@ class ClinicalTrialsClient:
 
 
 class LiteratureIntegrator:
-    """Unified PubMed + ClinicalTrials integration"""
+    """Unified PubMed + ClinicalTrials integration with structured status."""
 
     def __init__(self):
         self.pubmed = PubMedClient()
         self.ct = ClinicalTrialsClient()
 
     async def get_target_literature(self, gene: str, disease: str, max_articles: int = 10) -> Dict[str, Any]:
+        """Primary async method. Returns structured result with status."""
+        status = FetchStatus.SUCCESS
+        error_msg = None
+        
         query = f"{gene}[Title/Abstract] AND {disease}[Title/Abstract]"
+        
         try:
             articles, trials = await asyncio.gather(
                 self.pubmed.search_and_fetch(query, max_articles),
                 self.ct.search(disease, gene, max_articles // 2),
             )
-        except Exception:
+        except Exception as e:
+            status = FetchStatus.PARTIAL
+            error_msg = str(e)[:200]
             articles, trials = [], []
 
+        # Determine actual status based on results
+        if not HAS_HTTPX:
+            status = FetchStatus.SKIPPED
+            error_msg = "httpx not available"
+        elif len(articles) == 0 and len(trials) == 0:
+            status = FetchStatus.PARTIAL
+            error_msg = "No articles or trials found"
+
         return {
-            "gene": gene, "disease": disease,
+            "gene": gene,
+            "disease": disease,
             "articles": [{"pmid": a.pmid, "title": a.title, "year": a.year,
                           "journal": a.journal, "authors": a.authors[:3]} for a in articles],
             "clinical_trials": [{"nct_id": t.nct_id, "title": t.title, "phase": t.phase,
                                  "status": t.status, "enrollment": t.enrollment} for t in trials],
-            "summary": {"total_articles": len(articles), "total_trials": len(trials)},
+            "summary": {
+                "total_articles": len(articles),
+                "total_trials": len(trials),
+            },
+            # Structured status
+            "fetch_status": status.value,
+            "error": error_msg,
         }
 
     def get_sync(self, gene: str, disease: str, max_articles: int = 10) -> Dict[str, Any]:
-        """Synchronous wrapper - safe for both sync and async contexts."""
+        """
+        Synchronous wrapper - safe for both sync and async contexts.
+        
+        Uses ThreadPoolExecutor when called inside an existing event loop
+        to avoid "asyncio.run() cannot be called from a running event loop".
+        """
         try:
-            # Try to get running loop
-            loop = None
+            # Check if we're already inside an event loop
             try:
                 loop = asyncio.get_running_loop()
+                is_running = loop.is_running()
             except RuntimeError:
-                pass
-            
-            if loop is not None and loop.is_running():
-                # We're inside an event loop - use a new thread
-                import concurrent.futures
-                with concurrent.futures.ThreadPoolExecutor() as executor:
-                    future = executor.submit(asyncio.run, self.get_target_literature(gene, disease, max_articles))
-                    return future.result()
+                loop = None
+                is_running = False
+
+            if is_running:
+                # Inside an active event loop - use ThreadPoolExecutor
+                with concurrent.futures.ThreadPoolExecutor(max_workers=1) as executor:
+                    future = executor.submit(
+                        asyncio.run,
+                        self.get_target_literature(gene, disease, max_articles)
+                    )
+                    return future.result(timeout=60.0)  # 60s timeout
             else:
-                # No running loop - safe to use asyncio.run
+                # No running loop - safe to use asyncio.run directly
                 return asyncio.run(self.get_target_literature(gene, disease, max_articles))
-        except Exception as e:
-            print(f"Literature integration error: {e}")
+                
+        except concurrent.futures.TimeoutError:
             return {
                 "gene": gene,
                 "disease": disease,
                 "articles": [],
                 "clinical_trials": [],
                 "summary": {"total_articles": 0, "total_trials": 0},
-                "error": str(e),
+                "fetch_status": FetchStatus.FAILED.value,
+                "error": "Timeout fetching literature (60s)",
+            }
+        except Exception as e:
+            return {
+                "gene": gene,
+                "disease": disease,
+                "articles": [],
+                "clinical_trials": [],
+                "summary": {"total_articles": 0, "total_trials": 0},
+                "fetch_status": FetchStatus.FAILED.value,
+                "error": str(e)[:200],
             }

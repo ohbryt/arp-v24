@@ -25,9 +25,9 @@ client = Groq(api_key=os.environ.get("GROQ_API_KEY", GROQ_API_KEY))
 
 # Available models on Groq (as of 2026)
 GROQ_MODELS = {
-    "llama-3.3-70b": {
-        "name": "Llama 3.3 70B",
-        "context": 128000,
+    "llama-3.3-70b-versatile": {
+        "name": "Llama 3.3 70B Versatile",
+        "context": 131072,
         "speed": "fastest",
         "best_for": "Complex reasoning, long documents"
     },
@@ -51,7 +51,7 @@ GROQ_MODELS = {
     }
 }
 
-DEFAULT_MODEL = "llama-3.3-70b"
+DEFAULT_MODEL = "llama-3.3-70b-versatile"
 
 
 def summarize(text: str, model: str = DEFAULT_MODEL, max_length: int = 500) -> str:

@@ -28,8 +28,8 @@ from typing import Dict, List, Optional, Any, Tuple
 from datetime import datetime
 import numpy as np
 
-# Import ARP components
-from core.schema import validate_target, validate_compound
+# Import ARP components (commented out for standalone execution)
+# from core.schema import validate_target, validate_compound
 
 class DrugBLIPIntegration:
     """Integration layer for DrugBLIP molecular docking"""

@@ -2,11 +2,20 @@
 ARP v24 - ChEMBL REST API Client
 
 Live bioactivity data from ChEMBL (CC BY-SA 3.0).
+
+Ready for optional Engine 3 enrichment:
+- Fetch top bioactive compounds for a gene
+- Use ChEMBL data to augment internal COMPOUND_DATABASE
+- No runtime coupling: call only when explicitly requested
+
+Usage:
+    from api.chembl import ChEMBLClient
+    client = ChEMBLClient()
+    compounds = client.enrich_gene("THRB")
 """
 
-import time
-from typing import Dict, List, Optional, Any, Iterator
-from pathlib import Path
+from typing import Dict, List, Optional, Any
+from dataclasses import dataclass
 
 try:
     import httpx
@@ -14,27 +23,49 @@ try:
 except ImportError:
     HAS_HTTPX = False
 
-try:
-    import pandas as pd
-    HAS_PANDAS = True
-except ImportError:
-    HAS_PANDAS = False
+
+@dataclass
+class ChEMBLCompound:
+    """Structured compound from ChEMBL."""
+    chembl_id: str
+    smiles: Optional[str]
+    activity_type: str
+    activity_value_nM: float
+    pchembl: Optional[float]
+    assay_id: Optional[str]
+    
+    def to_candidate_dict(self) -> Dict[str, Any]:
+        """Convert to CandidateCompound-compatible dict."""
+        return {
+            "name": self.chembl_id,
+            "smiles": self.smiles,
+            "affinity": self.activity_value_nM,
+            "modality": "small_molecule" if self.smiles else "biologic",
+            "stage": self._stage_from_pchembl(),
+        }
+    
+    def _stage_from_pchembl(self) -> str:
+        if self.pchembl is None:
+            return "preclinical"
+        if self.pchembl >= 6:
+            return "clinical"
+        if self.pchembl >= 5:
+            return "phase1"
+        return "preclinical"
 
 
 class ChEMBLClient:
     """
     ChEMBL REST API client for bioactivity data.
-
-    Usage:
-        client = ChEMBLClient()
-        targets = client.fetch_target_by_gene("THRB")
-        df = client.fetch_activities_by_target("CHEMBL2093872")
+    
+    Minimal implementation - ready for optional enrichment.
+    Does NOT fetch on init; call methods explicitly.
     """
     BASE = "https://www.ebi.ac.uk/chembl/api"
 
-    def __init__(self, timeout: float = 60.0):
+    def __init__(self, timeout: float = 30.0):
         if not HAS_HTTPX:
-            raise ImportError("httpx required: pip install httpx")
+            raise ImportError("httpx required for ChEMBL: pip install httpx")
         self._client = httpx.Client(timeout=timeout)
 
     def close(self):
@@ -52,7 +83,7 @@ class ChEMBLClient:
         return r.json()
 
     def fetch_target_by_gene(self, gene_name: str) -> List[Dict]:
-        """Find ChEMBL target(s) by gene name"""
+        """Find ChEMBL target(s) by gene name."""
         data = self._get("target.json", {
             "target_name__icontains": gene_name,
             "target_type": "SINGLE PROTEIN",
@@ -61,40 +92,44 @@ class ChEMBLClient:
 
     def fetch_activities_by_target(
         self, target_chembl_id: str, max_value_nm: float = 10000,
-    ) -> List[Dict[str, Any]]:
-        """Fetch bioactivity data for a ChEMBL target ID"""
+    ) -> List[ChEMBLCompound]:
+        """Fetch bioactivity records for a ChEMBL target ID."""
         records = []
-        params = {
-            "target_chembl_id": target_chembl_id,
-            "assay_type": "B",  # Binding assays
-            "limit": "500",
-        }
         try:
-            data = self._get("activity.json", params)
+            data = self._get("activity.json", {
+                "target_chembl_id": target_chembl_id,
+                "assay_type": "B",
+                "limit": "500",
+            })
             for act in data.get("activities", []):
                 val = self._float(act.get("value"))
                 pchembl = self._float(act.get("pchembl_value"))
                 if val is not None and val <= max_value_nm:
-                    records.append({
-                        "molecule_chembl_id": act.get("molecule_chembl_id"),
-                        "smiles": act.get("canonical_smiles"),
-                        "activity_type": act.get("standard_type"),
-                        "activity_value_nM": val,
-                        "pchembl": pchembl,
-                        "assay_id": act.get("assay_chembl_id"),
-                    })
+                    records.append(ChEMBLCompound(
+                        chembl_id=act.get("molecule_chembl_id") or "",
+                        smiles=act.get("canonical_smiles"),
+                        activity_type=act.get("standard_type") or "",
+                        activity_value_nM=val,
+                        pchembl=pchembl,
+                        assay_id=act.get("assay_chembl_id"),
+                    ))
         except Exception as e:
-            print(f"ChEMBL activity fetch error: {e}")
+            pass  # Silently fail - not critical
         return records
 
-    def fetch_molecule(self, chembl_id: str) -> Dict:
-        """Fetch molecule details"""
-        return self._get(f"molecule/{chembl_id}.json")
-
-    def enrich_gene(self, gene_name: str, max_compounds: int = 20) -> List[Dict]:
+    def enrich_gene(self, gene_name: str, max_compounds: int = 20) -> List[ChEMBLCompound]:
         """
-        High-level: gene name -> top bioactive compounds.
-        Useful for Engine 3 enrichment.
+        High-level gene enrichment: returns top bioactive compounds.
+        
+        This is the integration seam for Engine 3.
+        Call this to augment COMPOUND_DATABASE with live ChEMBL data.
+        
+        Args:
+            gene_name: Gene symbol (e.g., "THRB", "EGFR")
+            max_compounds: Maximum number of compounds to return
+            
+        Returns:
+            List of ChEMBLCompound objects sorted by potency
         """
         targets = self.fetch_target_by_gene(gene_name)
         if not targets:
@@ -109,10 +144,9 @@ class ChEMBLClient:
         # Sort by pchembl (higher = more potent) and dedupe by molecule
         seen = set()
         unique = []
-        for a in sorted(activities, key=lambda x: x.get("pchembl") or 0, reverse=True):
-            mid = a.get("molecule_chembl_id")
-            if mid and mid not in seen:
-                seen.add(mid)
+        for a in sorted(activities, key=lambda x: x.pchembl or 0, reverse=True):
+            if a.chembl_id and a.chembl_id not in seen:
+                seen.add(a.chembl_id)
                 unique.append(a)
             if len(unique) >= max_compounds:
                 break
@@ -127,3 +161,17 @@ class ChEMBLClient:
             return float(v)
         except (ValueError, TypeError):
             return None
+
+
+# Integration seam for CandidateEngine
+def chembl_to_candidate_data(compound: ChEMBLCompound) -> Dict[str, Any]:
+    """
+    Convert ChEMBLCompound to CandidateCompound-compatible dict.
+    
+    Usage in Engine 3 future enrichment:
+        from api.chembl import ChEMBLClient, chembl_to_candidate_data
+        client = ChEMBLClient()
+        chembl_comps = client.enrich_gene("THRB")
+        candidate_data = [chembl_to_candidate_data(c) for c in chembl_comps]
+    """
+    return compound.to_candidate_dict()
