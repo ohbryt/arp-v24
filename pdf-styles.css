@@ -1,159 +1,325 @@
-/* PDF Style Configuration for md-to-pdf */
-/* Prevents tables and code blocks from breaking across pages */
+/* Enhanced PDF Styles for ARP Reports */
+/* Professional report layout with colorful design */
+
+:root {
+  --brand: #2563eb;
+  --brand-2: #7c3aed;
+  --accent: #0f766e;
+  --soft: #eff6ff;
+  --soft-2: #f5f3ff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --line: #dbe4f0;
+  --warning: #f59e0b;
+  --success: #10b981;
+  --danger: #ef4444;
+}
 
 @page {
   size: A4;
-  margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+  margin: 18mm 16mm 18mm 16mm;
 }
 
 body {
-  font-family: 'Noto Sans', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  color: var(--text);
+  font-family: "Pretendard", "Noto Sans KR", "Apple SD Gothic Neo", sans-serif;
   font-size: 10pt;
-  line-height: 1.5;
-  color: #333;
+  line-height: 1.65;
 }
 
-/* Prevent page breaks inside tables */
+/* ===== HEADINGS ===== */
+h1 {
+  color: white;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  padding: 14px 18px;
+  border-radius: 12px;
+  margin-bottom: 1.2em;
+  margin-top: 1.5em;
+  font-size: 18pt;
+  break-after: avoid;
+}
+
+h2 {
+  color: var(--brand);
+  border-left: 6px solid var(--accent);
+  padding-left: 10px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 1.5em;
+  font-size: 14pt;
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+h3 {
+  color: var(--brand-2);
+  border-left: 4px solid var(--brand);
+  padding-left: 8px;
+  margin-top: 1.2em;
+  font-size: 12pt;
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+h4 {
+  color: var(--accent);
+  font-size: 11pt;
+  margin-top: 1em;
+  break-after: avoid;
+}
+
+/* ===== TABLES ===== */
 table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 1em 0;
   break-inside: avoid;
   page-break-inside: avoid;
-  margin-bottom: 1em;
-  border-collapse: collapse;
-  width: 100%;
+}
+
+thead {
+  display: table-header-group;
+}
+
+thead th {
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color: white;
+  font-weight: bold;
+  padding: 8px 10px;
+  text-align: left;
+  border: 1px solid var(--brand);
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fbff;
+}
+
+tbody tr:nth-child(odd) {
+  background: white;
 }
 
 th, td {
-  border: 1px solid #ddd;
+  border: 1px solid var(--line);
   padding: 6px 8px;
   text-align: left;
-  font-size: 9pt;
-}
-
-th {
-  background-color: #f5f5f5;
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-/* Prevent page breaks inside code blocks */
-pre {
   break-inside: avoid;
   page-break-inside: avoid;
-  background-color: #f8f8f8;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 10px;
-  overflow-x: auto;
+}
+
+/* Table caption */
+caption {
+  font-size: 9pt;
+  color: var(--muted);
+  text-align: left;
+  padding: 4px 0;
+  margin-bottom: 8px;
+}
+
+/* ===== CODE BLOCKS ===== */
+pre {
+  background: linear-gradient(180deg, #f8fafc, #f1f5f9);
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--brand);
+  border-radius: 8px;
+  padding: 12px;
   font-size: 8pt;
-  line-height: 1.4;
+  line-height: 1.5;
+  overflow-x: auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
   margin: 1em 0;
 }
 
 code {
-  font-family: 'Consolas', 'Monaco', monospace;
+  font-family: "Consolas", "Monaco", "Menlo", monospace;
   font-size: 8pt;
-  background-color: #f3f3f3;
-  padding: 1px 4px;
-  border-radius: 2px;
+  background-color: #f3f4f6;
+  padding: 2px 4px;
+  border-radius: 3px;
+  color: #c7254e;
 }
 
-/* Inline code - no break */
-p code, li code {
+pre code {
+  background: transparent;
+  padding: 0;
+  color: var(--text);
+}
+
+/* ===== BLOCKQUOTES / CALLOUTS ===== */
+blockquote {
+  background: linear-gradient(180deg, var(--soft), var(--soft-2));
+  border-left: 5px solid var(--brand-2);
+  padding: 12px 14px;
+  border-radius: 0 10px 10px 0;
+  margin: 1em 0;
   break-inside: avoid;
+  page-break-inside: avoid;
+  font-style: italic;
 }
 
-/* Prevent page breaks inside bullet lists */
+/* ===== LISTS ===== */
 ul, ol {
   break-inside: avoid;
   page-break-inside: avoid;
+  margin: 0.5em 0;
+  padding-left: 1.5em;
 }
 
 li {
   margin-bottom: 0.3em;
-}
-
-/* Headings - keep with following content */
-h1, h2, h3, h4, h5, h6 {
-  break-after: avoid;
-  page-break-after: avoid;
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
-  color: #2c3e50;
-}
-
-h1 {
-  font-size: 18pt;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 0.3em;
-}
-
-h2 {
-  font-size: 14pt;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 0.2em;
-}
-
-h3 {
-  font-size: 12pt;
-}
-
-/* Images - prevent breaking */
-img {
   break-inside: avoid;
   page-break-inside: avoid;
+}
+
+/* ===== FIGURES & IMAGES ===== */
+figure {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 1em 0;
+  text-align: center;
+}
+
+img, svg, canvas {
   max-width: 100%;
   height: auto;
-  display: block;
-  margin: 1em auto;
-}
-
-/* Blockquotes */
-blockquote {
-  border-left: 4px solid #3498db;
-  margin: 1em 0;
-  padding: 0.5em 1em;
-  background-color: #f9f9f9;
   break-inside: avoid;
   page-break-inside: avoid;
 }
 
-/* Horizontal rules */
+figure img, .chart-wrap img, .chart-wrap svg {
+  max-height: 200mm;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  font-size: 8pt;
+  color: var(--muted);
+  text-align: center;
+  padding: 4px 0;
+  margin-top: 6px;
+}
+
+/* ===== HORIZONTAL RULES ===== */
 hr {
   border: none;
-  border-top: 1px solid #ddd;
+  border-top: 2px solid var(--line);
   margin: 1.5em 0;
 }
 
-/* Links */
+/* ===== LINKS ===== */
 a {
-  color: #3498db;
+  color: var(--brand);
   text-decoration: none;
 }
 
 a:hover {
+  color: var(--brand-2);
   text-decoration: underline;
 }
 
-/* Strong and emphasis */
+/* ===== STRONG & EMPHASIS ===== */
 strong {
   font-weight: bold;
+  color: var(--text);
 }
 
 em {
   font-style: italic;
 }
 
-/* Prevent orphan lines */
+/* ===== PAGE BREAK CONTROL ===== */
+/* Ensure headings don't separate from following content */
+h1, h2, h3, h4, h5, h6 {
+  break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+/* Keep paragraphs with their headings */
 p {
   orphans: 3;
   widows: 3;
 }
 
-/* Title page styling */
-h1:first-of-type {
+/* Prevent single lines at page bottom/top */
+p + p {
+  margin-top: 0;
+}
+
+/* ===== SPECIAL CALLOUT BOXES ===== */
+.callout {
+  background: linear-gradient(180deg, #fef3c7, #fde68a);
+  border-left: 5px solid var(--warning);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 12px;
+  margin: 1em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.warning {
+  background: linear-gradient(180deg, #fee2e2, #fecaca);
+  border-left: 5px solid var(--danger);
+}
+
+.success {
+  background: linear-gradient(180deg, #d1fae5, #a7f3d0);
+  border-left: 5px solid var(--success);
+}
+
+.info {
+  background: linear-gradient(180deg, #dbeafe, #bfdbfe);
+  border-left: 5px solid var(--brand);
+}
+
+/* ===== KEY POINTS BOX ===== */
+.key-points {
+  background: linear-gradient(180deg, #e0e7ff, #c7d2fe);
+  border: 2px solid var(--brand);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 1.2em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.key-points h4 {
+  color: var(--brand);
+  margin-top: 0;
+  border: none;
+  padding-left: 0;
+}
+
+/* ===== DIAGRAM CONTAINERS ===== */
+.diagram {
+  background: #fafafa;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  margin: 1em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
   text-align: center;
-  margin-top: 2em;
+}
+
+.diagram pre {
+  text-align: left;
+  background: white;
+}
+
+/* ===== FOOTER CONTROL ===== */
+@page:first {
+  margin: 10mm;
+}
+
+/* Print footer */
+@page {
+  @bottom-center {
+    content: counter(page);
+    font-size: 8pt;
+    color: var(--muted);
+  }
 }
