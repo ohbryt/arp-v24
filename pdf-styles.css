@@ -1,0 +1,159 @@
+/* PDF Style Configuration for md-to-pdf */
+/* Prevents tables and code blocks from breaking across pages */
+
+@page {
+  size: A4;
+  margin: 1.5cm 1.5cm 1.5cm 1.5cm;
+}
+
+body {
+  font-family: 'Noto Sans', 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* Prevent page breaks inside tables */
+table {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 1em;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 6px 8px;
+  text-align: left;
+  font-size: 9pt;
+}
+
+th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+/* Prevent page breaks inside code blocks */
+pre {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 10px;
+  overflow-x: auto;
+  font-size: 8pt;
+  line-height: 1.4;
+  margin: 1em 0;
+}
+
+code {
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: 8pt;
+  background-color: #f3f3f3;
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+/* Inline code - no break */
+p code, li code {
+  break-inside: avoid;
+}
+
+/* Prevent page breaks inside bullet lists */
+ul, ol {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+li {
+  margin-bottom: 0.3em;
+}
+
+/* Headings - keep with following content */
+h1, h2, h3, h4, h5, h6 {
+  break-after: avoid;
+  page-break-after: avoid;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  color: #2c3e50;
+}
+
+h1 {
+  font-size: 18pt;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.3em;
+}
+
+h2 {
+  font-size: 14pt;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 0.2em;
+}
+
+h3 {
+  font-size: 12pt;
+}
+
+/* Images - prevent breaking */
+img {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1em auto;
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid #3498db;
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background-color: #f9f9f9;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+/* Horizontal rules */
+hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 1.5em 0;
+}
+
+/* Links */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Strong and emphasis */
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+/* Prevent orphan lines */
+p {
+  orphans: 3;
+  widows: 3;
+}
+
+/* Title page styling */
+h1:first-of-type {
+  text-align: center;
+  margin-top: 2em;
+}
