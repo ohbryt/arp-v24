@@ -169,5 +169,31 @@ class LiteratureIntegrator:
         }
 
     def get_sync(self, gene: str, disease: str, max_articles: int = 10) -> Dict[str, Any]:
-        """Synchronous wrapper"""
-        return asyncio.run(self.get_target_literature(gene, disease, max_articles))
+        """Synchronous wrapper - safe for both sync and async contexts."""
+        try:
+            # Try to get running loop
+            loop = None
+            try:
+                loop = asyncio.get_running_loop()
+            except RuntimeError:
+                pass
+            
+            if loop is not None and loop.is_running():
+                # We're inside an event loop - use a new thread
+                import concurrent.futures
+                with concurrent.futures.ThreadPoolExecutor() as executor:
+                    future = executor.submit(asyncio.run, self.get_target_literature(gene, disease, max_articles))
+                    return future.result()
+            else:
+                # No running loop - safe to use asyncio.run
+                return asyncio.run(self.get_target_literature(gene, disease, max_articles))
+        except Exception as e:
+            print(f"Literature integration error: {e}")
+            return {
+                "gene": gene,
+                "disease": disease,
+                "articles": [],
+                "clinical_trials": [],
+                "summary": {"total_articles": 0, "total_trials": 0},
+                "error": str(e),
+            }
