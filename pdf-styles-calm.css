@@ -1,0 +1,341 @@
+/* Calm & Professional PDF Styles for ARP Reports */
+/* Easy on the eyes - muted, soft color palette */
+
+:root {
+  /* Calming color palette - no harsh gradients */
+  --bg-primary: #FAFAFA;
+  --bg-secondary: #F5F5F0;
+  --bg-card: #FFFFFF;
+  
+  /* Muted, professional colors */
+  --text-primary: #2D3748;
+  --text-secondary: #4A5568;
+  --text-muted: #718096;
+  
+  /* Soft accent colors - calming blue-green */
+  --accent-primary: #4A6FA5;
+  --accent-secondary: #6B8CAE;
+  --accent-light: #E8EEF4;
+  
+  /* Borders and lines - subtle */
+  --border-light: #E2E8F0;
+  --border-medium: #CBD5E0;
+  
+  /* Table colors - soft */
+  --table-header-bg: #4A6FA5;
+  --table-header-text: #FFFFFF;
+  --table-row-even: #F7FAFC;
+  --table-row-odd: #FFFFFF;
+  
+  /* Callout colors - muted */
+  --callout-info: #E8F4FD;
+  --callout-warning: #FEF9E7;
+  --callout-success: #E8F5E9;
+  --callout-danger: #FDECEA;
+  
+  --callout-border-info: #4A6FA5;
+  --callout-border-warning: #D4A84B;
+  --callout-border-success: #5D8B5D;
+  --callout-border-danger: #C75050;
+}
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  background: var(--bg-primary);
+}
+
+body {
+  font-family: 'Noto Sans', 'Noto Sans KR', 'Malgun Gothic', 'Apple SD Gothic Neo', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 10pt;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--bg-primary);
+}
+
+/* ===== HEADINGS - No gradients, solid muted colors ===== */
+h1 {
+  color: var(--text-primary);
+  background: var(--bg-secondary);
+  padding: 20px 24px;
+  border-radius: 8px;
+  margin-bottom: 1.2em;
+  font-size: 18pt;
+  font-weight: 600;
+  border-left: 5px solid var(--accent-primary);
+  break-after: avoid;
+}
+
+h2 {
+  color: var(--accent-primary);
+  border-left: 4px solid var(--accent-secondary);
+  padding: 10px 0 10px 14px;
+  margin-top: 1.8em;
+  margin-bottom: 0.8em;
+  font-size: 14pt;
+  font-weight: 600;
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+h3 {
+  color: var(--text-secondary);
+  border-left: 3px solid var(--border-medium);
+  padding: 6px 0 6px 10px;
+  margin-top: 1.4em;
+  margin-bottom: 0.6em;
+  font-size: 12pt;
+  font-weight: 600;
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+h4 {
+  color: var(--text-secondary);
+  font-size: 11pt;
+  margin-top: 1em;
+  margin-bottom: 0.4em;
+  font-weight: 600;
+  break-after: avoid;
+}
+
+/* ===== TABLES - Clean, professional ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 1em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+thead {
+  display: table-header-group;
+}
+
+thead th {
+  background: var(--table-header-bg);
+  color: var(--table-header-text);
+  font-weight: 600;
+  padding: 10px 12px;
+  text-align: left;
+  font-size: 9pt;
+  border-bottom: 2px solid var(--border-medium);
+}
+
+tbody tr:nth-child(even) {
+  background: var(--table-row-even);
+}
+
+tbody tr:nth-child(odd) {
+  background: var(--table-row-odd);
+}
+
+th, td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid var(--border-light);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* ===== CODE BLOCKS - Subtle styling ===== */
+pre {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-left: 4px solid var(--accent-secondary);
+  border-radius: 6px;
+  padding: 12px 14px;
+  font-size: 8pt;
+  line-height: 1.6;
+  overflow-x: auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 1em 0;
+  color: var(--text-secondary);
+}
+
+code {
+  font-family: 'Consolas', 'Monaco', 'Menlo', monospace;
+  font-size: 8.5pt;
+  background-color: var(--bg-secondary);
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: var(--text-secondary);
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+  color: var(--text-secondary);
+}
+
+/* ===== BLOCKQUOTES - Soft callouts ===== */
+blockquote {
+  background: var(--callout-info);
+  border-left: 4px solid var(--callout-border-info);
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 1em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  color: var(--text-secondary);
+  font-style: normal;
+}
+
+/* ===== LISTS ===== */
+ul, ol {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.4em;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  color: var(--text-primary);
+}
+
+/* ===== FIGURES & IMAGES ===== */
+figure {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin: 1em 0;
+  text-align: center;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+figcaption {
+  font-size: 8pt;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 4px 0;
+  margin-top: 6px;
+  font-style: italic;
+}
+
+/* ===== HORIZONTAL RULES ===== */
+hr {
+  border: none;
+  border-top: 1px solid var(--border-light);
+  margin: 1.5em 0;
+}
+
+/* ===== LINKS ===== */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+}
+
+/* ===== STRONG & EMPHASIS ===== */
+strong {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+em {
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+/* ===== PAGE BREAK CONTROL ===== */
+h1, h2, h3, h4, h5, h6 {
+  break-after: avoid;
+  orphans: 3;
+  widows: 3;
+}
+
+p {
+  orphans: 3;
+  widows: 3;
+}
+
+/* ===== CALLOUT BOXES ===== */
+.callout {
+  background: var(--callout-info);
+  border: 1px solid var(--callout-border-info);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 1em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.callout.warning {
+  background: var(--callout-warning);
+  border-color: var(--callout-border-warning);
+}
+
+.callout.success {
+  background: var(--callout-success);
+  border-color: var(--callout-border-success);
+}
+
+.callout.danger {
+  background: var(--callout-danger);
+  border-color: var(--callout-border-danger);
+}
+
+.callout h4 {
+  margin-top: 0;
+  color: var(--text-secondary);
+}
+
+/* ===== KEY POINTS BOX ===== */
+.key-points {
+  background: var(--accent-light);
+  border: 2px solid var(--accent-primary);
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin: 1.2em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.key-points h4 {
+  color: var(--accent-primary);
+  margin-top: 0;
+  border: none;
+  padding: 0;
+}
+
+/* ===== DIAGRAM CONTAINERS ===== */
+.diagram {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 12px;
+  margin: 1em 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+  text-align: center;
+}
+
+/* ===== FOOTER ===== */
+@page {
+  @bottom-center {
+    content: counter(page);
+    font-size: 8pt;
+    color: var(--text-muted);
+  }
+}
