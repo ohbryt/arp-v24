@@ -1,0 +1,1834 @@
+{
+  "version": "24.0",
+  "disease": "masld",
+  "n_iterations": 100,
+  "top_n": 5,
+  "timestamp": "2026-04-19T18:46:10.032164",
+  "statistics": {
+    "scores": {
+      "mean": 0.525,
+      "std": 0.0,
+      "max": 0.525,
+      "min": 0.525
+    },
+    "execution_time": {
+      "mean": 0.0001244211196899414,
+      "total": 0.01244211196899414
+    },
+    "gene_frequency": {
+      "NR1H4": 100
+    },
+    "modality_distribution": {
+      "small_molecule": 100
+    }
+  },
+  "all_stats": [
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00023293495178222656,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 1,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001571178436279297,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 2,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00014090538024902344,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 3,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00013494491577148438,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 4,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00013303756713867188,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 5,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00013327598571777344,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 6,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001308917999267578,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 7,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00013208389282226562,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 8,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001232624053955078,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 9,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012183189392089844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 10,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012421607971191406,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 11,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001227855682373047,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 12,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012302398681640625,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 13,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001220703125,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 14,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012183189392089844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 15,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012302398681640625,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 16,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 17,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 18,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 19,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001220703125,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 20,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001277923583984375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 21,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012183189392089844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 22,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 23,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 24,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001220703125,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 25,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012302398681640625,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 26,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012087821960449219,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 27,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012087821960449219,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 28,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012087821960449219,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 29,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012230873107910156,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 30,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012493133544921875,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 31,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012183189392089844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 32,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012421607971191406,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 33,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012493133544921875,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 34,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012183189392089844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 35,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 36,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 37,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001201629638671875,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 38,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012111663818359375,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 39,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001220703125,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 40,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00012183189392089844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 41,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011873245239257812,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 42,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 43,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 44,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011610984802246094,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 45,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011587142944335938,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 46,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 47,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011420249938964844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 48,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 49,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.0001239776611328125,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 50,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011706352233886719,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 51,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011992454528808594,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 52,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 53,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 54,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 55,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011420249938964844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 56,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 57,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 58,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 59,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 60,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011610984802246094,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 61,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011420249938964844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 62,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 63,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011539459228515625,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 64,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 65,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 66,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 67,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 68,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011515617370605469,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 69,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 70,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 71,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 72,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011610984802246094,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 73,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 74,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011515617370605469,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 75,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 76,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011539459228515625,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 77,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011372566223144531,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 78,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011181831359863281,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 79,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011324882507324219,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 80,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011301040649414062,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 81,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 82,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011301040649414062,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 83,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011301040649414062,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 84,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011706352233886719,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 85,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 86,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 87,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011587142944335938,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 88,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 89,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011324882507324219,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 90,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011491775512695312,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 91,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011301040649414062,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 92,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011205673217773438,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 93,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011277198791503906,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 94,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011396408081054688,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 95,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011420249938964844,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 96,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011301040649414062,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 97,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011181831359863281,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 98,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011181831359863281,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 99,
+      "wall_time": 0.0
+    },
+    {
+      "targets_returned": 5,
+      "execution_time": 0.00011229515075683594,
+      "literature_status": "skipped",
+      "warnings_count": 0,
+      "errors_count": 0,
+      "top_gene": "NR1H4",
+      "top_score": 0.525,
+      "top_modalities": [
+        "small_molecule"
+      ],
+      "engine2_runs": 5,
+      "engine3_runs": 5,
+      "best_candidate": "Resmetirom",
+      "best_candidate_score": 0.825,
+      "iteration": 100,
+      "wall_time": 0.0
+    }
+  ],
+  "best": {
+    "gene": "NR1H4",
+    "score": 0.525,
+    "modalities": [
+      "small_molecule"
+    ]
+  }
+}
