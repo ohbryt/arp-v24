@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg { fill: #fbfbf8; }
+      .title { font: 700 34px Arial, sans-serif; fill: #1f2937; }
+      .sub { font: 600 24px Arial, sans-serif; fill: #1f2937; }
+      .label { font: 500 22px Arial, sans-serif; fill: #1f2937; }
+      .small { font: 500 18px Arial, sans-serif; fill: #374151; }
+      .boxm { fill: #dbeafe; stroke: #1d4ed8; stroke-width: 3; rx: 12; }
+      .boxc { fill: #dcfce7; stroke: #15803d; stroke-width: 3; rx: 12; }
+      .boxmeth { fill: #fef3c7; stroke: #b45309; stroke-width: 3; rx: 12; }
+      .boxred { fill: #fee2e2; stroke: #b91c1c; stroke-width: 3; rx: 12; }
+      .target { fill: #111827; stroke: #111827; stroke-width: 2; rx: 8; }
+      .targettext { font: 700 18px Arial, sans-serif; fill: #ffffff; }
+      .flow { stroke: #111827; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke: #6b7280; stroke-width: 3; stroke-dasharray: 10 8; fill: none; marker-end: url(#arrowgray); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#111827"/>
+    </marker>
+    <marker id="arrowgray" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#6b7280"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1600" height="900"/>
+  <text class="title" x="60" y="70">Figure 1. Compartmentalized one-carbon flux in cancer</text>
+
+  <rect class="boxm" x="70" y="130" width="620" height="500" rx="18"/>
+  <text class="sub" x="95" y="170">Mitochondrion: flux-generating engine</text>
+  <rect class="boxm" x="120" y="225" width="170" height="78" rx="12"/>
+  <text class="label" x="175" y="270">Serine</text>
+  <rect class="target" x="156" y="312" width="98" height="34" rx="8"/>
+  <text class="targettext" x="177" y="335">SHMT2</text>
+  <rect class="boxm" x="360" y="225" width="220" height="78" rx="12"/>
+  <text class="label" x="392" y="270">5,10-methylene-THF</text>
+  <rect class="target" x="415" y="312" width="108" height="34" rx="8"/>
+  <text class="targettext" x="434" y="335">MTHFD2</text>
+  <rect class="boxm" x="360" y="390" width="220" height="78" rx="12"/>
+  <text class="label" x="405" y="435">10-formyl-THF</text>
+  <rect class="target" x="420" y="477" width="104" height="34" rx="8"/>
+  <text class="targettext" x="442" y="500">MTHFD1L</text>
+  <rect class="boxm" x="120" y="390" width="170" height="78" rx="12"/>
+  <text class="label" x="177" y="435">Glycine</text>
+  <rect class="boxred" x="110" y="540" width="200" height="62" rx="12"/>
+  <text class="label" x="136" y="578">NAD(P)H / redox</text>
+  <rect class="boxm" x="360" y="555" width="220" height="78" rx="12"/>
+  <text class="label" x="425" y="600">Formate</text>
+
+  <path class="flow" d="M290 264 L360 264"/>
+  <path class="flow" d="M470 303 L470 390"/>
+  <path class="flow" d="M360 429 L290 429"/>
+  <path class="flow" d="M470 468 L470 555"/>
+  <path class="dashed" d="M290 282 C320 330, 330 410, 250 540"/>
+  <text class="small" x="210" y="365">1C donation</text>
+
+  <rect class="boxc" x="860" y="130" width="670" height="500" rx="18"/>
+  <text class="sub" x="885" y="170">Cytosol: biosynthesis and methylation</text>
+  <rect class="boxc" x="930" y="225" width="220" height="78" rx="12"/>
+  <text class="label" x="986" y="270">Purine synthesis</text>
+  <rect class="boxc" x="1200" y="225" width="220" height="78" rx="12"/>
+  <text class="label" x="1245" y="270">dTMP / TYMS</text>
+  <rect class="boxc" x="930" y="390" width="220" height="78" rx="12"/>
+  <text class="label" x="980" y="435">MTHFD1 folate</text>
+  <rect class="boxmeth" x="1200" y="390" width="250" height="78" rx="12"/>
+  <text class="label" x="1248" y="435">Methionine cycle</text>
+  <rect class="target" x="1278" y="477" width="95" height="34" rx="8"/>
+  <text class="targettext" x="1302" y="500">MAT2A</text>
+  <rect class="boxmeth" x="1200" y="555" width="250" height="78" rx="12"/>
+  <text class="label" x="1288" y="600">SAM</text>
+  <rect class="boxred" x="930" y="555" width="220" height="78" rx="12"/>
+  <text class="label" x="968" y="600">Transsulfuration / GSH</text>
+
+  <path class="flow" d="M1040 390 L1040 303"/>
+  <path class="flow" d="M1085 264 L1200 264"/>
+  <path class="flow" d="M1325 468 L1325 555"/>
+  <path class="flow" d="M1200 429 L1150 429"/>
+
+  <path class="flow" d="M580 594 C710 594, 760 429, 930 429"/>
+  <text class="small" x="695" y="560">formate overflow</text>
+
+  <rect class="target" x="87" y="735" width="98" height="34" rx="8"/>
+  <text class="targettext" x="105" y="758">PHGDH</text>
+  <text class="small" x="205" y="758">serine supply to the folate network</text>
+
+  <text class="small" x="95" y="805">Principal outputs: nucleotide synthesis, methyl-donor generation, and redox buffering.</text>
+</svg>

@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .bg { fill: #fbfbf8; }
+      .title { font: 700 34px Arial, sans-serif; fill: #1f2937; }
+      .sub { font: 700 24px Arial, sans-serif; fill: #1f2937; }
+      .label { font: 500 22px Arial, sans-serif; fill: #1f2937; }
+      .small { font: 500 18px Arial, sans-serif; fill: #374151; }
+      .tumor { fill: #fee2e2; stroke: #b91c1c; stroke-width: 3; rx: 20; }
+      .tcell { fill: #dbeafe; stroke: #1d4ed8; stroke-width: 3; rx: 20; }
+      .panel { fill: #ffffff; stroke: #9ca3af; stroke-width: 2; rx: 14; }
+      .good { fill: #dcfce7; stroke: #15803d; stroke-width: 3; rx: 14; }
+      .bad { fill: #fef3c7; stroke: #b45309; stroke-width: 3; rx: 14; }
+      .target { fill: #111827; stroke: #111827; stroke-width: 2; rx: 8; }
+      .targettext { font: 700 18px Arial, sans-serif; fill: #ffffff; }
+      .flow { stroke: #111827; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .support { stroke: #15803d; stroke-width: 4; fill: none; marker-end: url(#greenarrow); }
+      .suppress { stroke: #b91c1c; stroke-width: 4; fill: none; marker-end: url(#redarrow); }
+    </style>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#111827"/>
+    </marker>
+    <marker id="greenarrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#15803d"/>
+    </marker>
+    <marker id="redarrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#b91c1c"/>
+    </marker>
+  </defs>
+  <rect class="bg" x="0" y="0" width="1600" height="900"/>
+  <text class="title" x="60" y="70">Figure 2. One-carbon metabolism in the tumor immune microenvironment</text>
+
+  <rect class="tumor" x="80" y="140" width="620" height="620" rx="24"/>
+  <text class="sub" x="110" y="180">Tumor cell programs</text>
+  <rect class="panel" x="130" y="230" width="230" height="92" rx="14"/>
+  <text class="label" x="170" y="270">SLC43A2-high uptake</text>
+  <text class="small" x="175" y="300">methionine sink</text>
+  <rect class="panel" x="410" y="230" width="220" height="92" rx="14"/>
+  <text class="label" x="470" y="270">MAT2A</text>
+  <text class="small" x="438" y="300">SAM-dependent methylation</text>
+  <rect class="panel" x="130" y="400" width="230" height="92" rx="14"/>
+  <text class="label" x="195" y="440">MTHFD2</text>
+  <text class="small" x="171" y="470">PD-L1 upregulation</text>
+  <rect class="panel" x="410" y="400" width="220" height="92" rx="14"/>
+  <text class="label" x="486" y="440">MTAP loss</text>
+  <text class="small" x="468" y="470">MTA accumulation</text>
+  <rect class="bad" x="190" y="575" width="330" height="90" rx="14"/>
+  <text class="label" x="245" y="615">Immune-evasive tumor state</text>
+  <text class="small" x="248" y="645">checkpoint signaling, nutrient competition</text>
+
+  <path class="flow" d="M245 322 L245 400"/>
+  <path class="flow" d="M520 322 L520 400"/>
+  <path class="flow" d="M245 492 L330 575"/>
+  <path class="flow" d="M520 492 L420 575"/>
+
+  <rect class="tcell" x="900" y="140" width="620" height="620" rx="24"/>
+  <text class="sub" x="930" y="180">CD8 / CD4 T-cell state</text>
+  <rect class="panel" x="960" y="230" width="230" height="92" rx="14"/>
+  <text class="label" x="1002" y="270">Low methionine</text>
+  <text class="small" x="1024" y="300">low SAM</text>
+  <rect class="panel" x="1230" y="230" width="220" height="92" rx="14"/>
+  <text class="label" x="1298" y="270">Low H3K79me2</text>
+  <text class="small" x="1263" y="300">reduced effector programs</text>
+  <rect class="panel" x="960" y="400" width="230" height="92" rx="14"/>
+  <text class="label" x="1029" y="440">High PD-1</text>
+  <text class="small" x="1005" y="470">exhaustion-associated state</text>
+  <rect class="panel" x="1230" y="400" width="220" height="92" rx="14"/>
+  <text class="label" x="1276" y="440">MTA exposure</text>
+  <text class="small" x="1255" y="470">PRMT5 / receptor effects</text>
+  <rect class="bad" x="1050" y="575" width="270" height="90" rx="14"/>
+  <text class="label" x="1108" y="615">T-cell dysfunction</text>
+  <text class="small" x="1116" y="645">exhaustion and weak cytotoxicity</text>
+
+  <path class="flow" d="M1190 276 L1230 276"/>
+  <path class="flow" d="M1075 322 L1075 400"/>
+  <path class="flow" d="M1340 322 L1340 400"/>
+  <path class="flow" d="M1075 492 L1140 575"/>
+  <path class="flow" d="M1340 492 L1230 575"/>
+
+  <path class="suppress" d="M520 620 C700 620, 780 620, 1050 620"/>
+  <text class="small" x="735" y="595">suppression</text>
+
+  <rect class="good" x="650" y="290" width="210" height="92" rx="14"/>
+  <text class="label" x="707" y="330">Formate</text>
+  <text class="small" x="684" y="360">therapeutic supplementation</text>
+  <path class="support" d="M860 336 C920 336, 930 336, 960 336"/>
+  <path class="support" d="M860 350 C1000 520, 1040 545, 1160 575"/>
+  <text class="small" x="870" y="312">supports reinvigorated T cells</text>
+
+  <rect class="good" x="650" y="510" width="210" height="92" rx="14"/>
+  <text class="label" x="690" y="550">PD-1 blockade</text>
+  <text class="small" x="708" y="580">combination benefit</text>
+  <path class="support" d="M860 556 C950 556, 980 556, 1050 556"/>
+
+  <text class="small" x="90" y="830">Tumor one-carbon metabolism can both suppress immunity and create exploitable metabolic opportunities for immunotherapy combinations.</text>
+</svg>
