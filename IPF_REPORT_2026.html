@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Idiopathic Pulmonary Fibrosis: Current Therapies and Emerging Frontiers (2024-2025)</title>
+<style>
+  @font-face { font-family: "Newsreader"; src: url("https://cdn.jsdelivr.net/npm/newsreader@1.0.0/fonts/Newsreader-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "Newsreader"; src: url("https://cdn.jsdelivr.net/npm/newsreader@1.0.0/fonts/Newsreader-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; }
+  @font-face { font-family: "Inter"; src: url("https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/Inter/Inter-Regular.woff2") format("woff2"); font-weight: 400; font-style: normal; }
+  @font-face { font-family: "Inter"; src: url("https://cdn.jsdelivr.net/npm/inter-ui@4.1.0/Inter/Inter-Medium.woff2") format("woff2"); font-weight: 500; font-style: normal; }
+
+  @page {
+    size: A4;
+    margin: 20mm 22mm 22mm 22mm;
+    background: #f5f4ed;
+    @bottom-center {
+      content: counter(page) "  ·  IPF Research Report 2026";
+      font-family: "Newsreader", Georgia, serif;
+      font-size: 8.5pt;
+      color: #87867f;
+    }
+  }
+  @page:first { @bottom-center { content: ""; } }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --parchment: #f5f4ed;
+    --ivory:     #faf9f5;
+    --near-black:#141413;
+    --dark-warm: #3d3d3a;
+    --charcoal:  #4d4c48;
+    --olive:     #5e5d59;
+    --stone:     #87867f;
+    --brand:     #1B365D;
+    --border:    #e8e6dc;
+    --border-soft:#e5e3d8;
+    --tag-bg:    #E4ECF5;
+    --serif: "Newsreader", Georgia, "Times New Roman", serif;
+    --sans:  "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  html, body { background: var(--parchment); }
+  body { color: var(--near-black); font-family: var(--serif); font-size: 10.5pt; line-height: 1.55; }
+  .sans { font-family: var(--sans); }
+
+  .cover { min-height: 240mm; display: flex; flex-direction: column; justify-content: space-between; padding: 40mm 0 0 0; break-after: page; }
+  .cover-eyebrow { font-family: var(--sans); font-size: 10pt; color: var(--brand); letter-spacing: 2pt; text-transform: uppercase; font-weight: 500; margin-bottom: 18pt; }
+  .cover-title { font-size: 36pt; font-weight: 500; color: var(--near-black); line-height: 1.12; letter-spacing: -0.5pt; margin-bottom: 16pt; }
+  .cover-sub { font-family: var(--sans); font-size: 14pt; color: var(--olive); line-height: 1.45; max-width: 85%; margin-bottom: 30pt; }
+  .cover-meta { font-family: var(--sans); font-size: 10pt; color: var(--stone); line-height: 1.55; font-variant-numeric: tabular-nums; }
+  .cover-meta strong { color: var(--dark-warm); font-weight: 500; }
+
+  .toc { break-after: page; }
+  .toc h2 { font-size: 22pt; font-weight: 500; margin-bottom: 14pt; border-left: 2.5pt solid var(--brand); padding-left: 8pt; }
+  .toc-item { display: flex; justify-content: space-between; align-items: baseline; padding: 6pt 0; border-bottom: 0.3pt dotted var(--border); font-size: 11pt; }
+  .toc-num { color: var(--brand); font-weight: 500; min-width: 30pt; }
+  .toc-title { flex: 1; padding-left: 6pt; }
+  .toc-page { color: var(--stone); }
+
+  h1 { font-size: 22pt; font-weight: 500; line-height: 1.15; margin: 0 0 10pt 0; border-left: 2.5pt solid var(--brand); padding-left: 8pt; color: var(--near-black); break-after: avoid; }
+  h2 { font-size: 14pt; font-weight: 500; line-height: 1.25; margin: 20pt 0 6pt 0; color: var(--near-black); break-after: avoid; }
+  h3 { font-size: 11pt; font-weight: 500; line-height: 1.3; margin: 14pt 0 4pt 0; color: var(--dark-warm); break-after: avoid; }
+  .chapter-num { font-family: var(--sans); font-size: 9pt; color: var(--brand); letter-spacing: 2pt; text-transform: uppercase; font-weight: 500; margin-bottom: 6pt; }
+
+  p { margin: 0 0 8pt 0; }
+  .lead { font-size: 11pt; line-height: 1.55; color: var(--dark-warm); margin-bottom: 12pt; }
+  .hl { color: var(--brand); font-weight: 500; }
+
+  ul, ol { margin: 6pt 0 10pt 0; padding-left: 20pt; line-height: 1.55; }
+  ul li::marker { color: var(--brand); }
+  ol li::marker { color: var(--brand); font-weight: 500; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 9pt; margin: 10pt 0; break-inside: avoid; }
+  table th { text-align: left; font-family: var(--sans); font-weight: 500; color: var(--charcoal); padding: 5pt 8pt; border-bottom: 1pt solid var(--brand); background: var(--ivory); }
+  table td { padding: 4pt 8pt; border-bottom: 0.3pt solid var(--border-soft); vertical-align: top; }
+  table tr:hover { background: var(--ivory); }
+
+  .callout { background: var(--ivory); border-left: 2pt solid var(--brand); padding: 8pt 12pt; border-radius: 3pt; margin: 10pt 0; break-inside: avoid; }
+  .takeaway { background: var(--ivory); border: 0.5pt solid var(--border); border-radius: 4pt; padding: 10pt 14pt; margin: 12pt 0; break-inside: avoid; }
+  .takeaway-label { font-family: var(--sans); font-size: 8pt; color: var(--brand); letter-spacing: 1pt; text-transform: uppercase; font-weight: 600; margin-bottom: 4pt; }
+
+  .tag { display: inline-block; background: var(--tag-bg); color: var(--brand); font-family: var(--sans); font-size: 7pt; font-weight: 600; padding: 1pt 5pt; border-radius: 3pt; letter-spacing: 0.4pt; text-transform: uppercase; margin-right: 3pt; }
+
+  .chapter { break-before: page; }
+  .chapter:first { break-before: auto; }
+
+  blockquote { border-left: 2pt solid var(--brand); margin: 10pt 0; padding: 4pt 0 4pt 12pt; color: var(--olive); }
+  .cite { display: block; font-family: var(--sans); font-size: 8pt; color: var(--stone); margin-top: 4pt; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; }
+  .card { background: var(--ivory); border: 0.5pt solid var(--border); border-radius: 4pt; padding: 10pt 12pt; }
+  .card-title { font-family: var(--sans); font-size: 9pt; color: var(--brand); font-weight: 600; margin-bottom: 4pt; }
+  .card-body { font-size: 9.5pt; }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<section class="cover">
+  <div>
+    <div class="cover-eyebrow">Research Report · Pulmonology</div>
+    <div class="cover-title">Idiopathic Pulmonary Fibrosis</div>
+    <div class="cover-sub">Current Therapies and Emerging Frontiers 2024-2025<br>A Comprehensive Review of Molecular Mechanisms, Clinical Pipeline, and Future Directions</div>
+  </div>
+  <div class="cover-meta">
+    <strong>ARP v24 Research Team</strong><br>
+    Version 1.0 · April 2026<br>
+    arp-v24/workspace
+  </div>
+</section>
+
+<!-- TOC -->
+<section class="toc">
+  <h2>Contents</h2>
+  <div class="toc-item"><span class="toc-num">01</span><span class="toc-title">Executive Summary</span><span class="toc-page">03</span></div>
+  <div class="toc-item"><span class="toc-num">02</span><span class="toc-title">Introduction & Epidemiology</span><span class="toc-page">04</span></div>
+  <div class="toc-item"><span class="toc-num">03</span><span class="toc-title">Molecular Mechanisms</span><span class="toc-page">05</span></div>
+  <div class="toc-item"><span class="toc-num">04</span><span class="toc-title">Current Approved Therapies</span><span class="toc-page">07</span></div>
+  <div class="toc-item"><span class="toc-num">05</span><span class="toc-title">Clinical Pipeline 2024-2025</span><span class="toc-page">08</span></div>
+  <div class="toc-item"><span class="toc-num">06</span><span class="toc-title">Emerging Targets & Natural Products</span><span class="toc-page">10</span></div>
+  <div class="toc-item"><span class="toc-num">07</span><span class="toc-page">11</span></div>
+</section>
+
+<!-- Chapter 01: Executive Summary -->
+<section class="chapter">
+  <div class="chapter-num">01 · Executive Summary</div>
+  <h1>Executive Summary</h1>
+
+  <p class="lead">
+    Idiopathic Pulmonary Fibrosis (IPF) affects approximately <span class="hl">5 million patients worldwide</span> with a median survival of only 3-5 years. While two FDA-approved antifibrotic drugs (pirfenidone and nintedanib) exist, neither reverses disease progression—highlighting a critical unmet medical need.
+  </p>
+
+  <h2>Key Takeaways</h2>
+  <ul>
+    <li><span class="hl">AI-discovered drugs</span> are now entering Phase 2a trials—Rentosertib (TNIK inhibitor) represents the first AI-generated molecule to reach human testing in IPF</li>
+    <li>The clinical pipeline spans multiple mechanisms: Hedgehog inhibition (Taladegib), integrin targeting (BEACON-IPF), and cell therapy (REGEND001)</li>
+    <li>Emerging targets include <span class="hl">SIRT3/6/7</span>, COL1A1, SP1, and PI3K-AKT pathway components</li>
+    <li>Natural products such as Astragaloside IV show promise through PI3K-AKT modulation</li>
+  </ul>
+
+  <div class="takeaway">
+    <div class="takeaway-label">Questions This Document Answers</div>
+    <ul>
+      <li>What are the key molecular pathways driving IPF fibrosis?</li>
+      <li>What is the current status of IPF drug development in 2024-2025?</li>
+      <li>What novel targets and therapies show promise for future treatment?</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Chapter 02: Introduction -->
+<section class="chapter">
+  <div class="chapter-num">02 · Introduction</div>
+  <h1>Introduction & Epidemiology</h1>
+
+  <p class="lead">
+    Idiopathic Pulmonary Fibrosis (IPF) is a chronic, progressive, and ultimately fatal interstitial lung disease characterized by persistent alveolar inflammation and extensive fibrotic changes that progressively impair lung function.
+  </p>
+
+  <h2>Disease Overview</h2>
+  <p>
+    IPF results from a combination of <span class="hl">genetic predisposition</span>, environmental factors, and aberrant cellular responses to injury. The disease follows a progressive course, ultimately leading to respiratory failure and death. Median survival is 3-5 years after diagnosis, with most patients dying of respiratory causes.
+  </p>
+
+  <h2>Epidemiology</h2>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Global Burden</div>
+      <div class="card-body">
+        ~<strong>5 million</strong> patients worldwide<br>
+        <strong>$10+ billion</strong> annual US healthcare costs
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-title">Patient Demographics</div>
+      <div class="card-body">
+        Diagnosis: 6th decade of life<br>
+        Male predominance<br>
+        Higher incidence in smokers
+      </div>
+    </div>
+  </div>
+
+  <h2>Unmet Need</h2>
+  <div class="callout">
+    Current therapies slow disease progression but <strong>do not reverse fibrosis</strong>. Lung transplantation remains the only curative option, but is limited by donor availability and surgical risk.
+  </div>
+</section>
+
+<!-- Chapter 03: Molecular Mechanisms -->
+<section class="chapter">
+  <div class="chapter-num">03 · Molecular Mechanisms</div>
+  <h1>Molecular Mechanisms</h1>
+
+  <p class="lead">IPF involves dysregulation of multiple interconnected signaling pathways that drive fibroblast activation, extracellular matrix deposition, and progressive fibrosis.</p>
+
+  <h2>Key Pathways</h2>
+
+  <h3>PI3K-AKT Pathway</h3>
+  <p>Plays a crucial role in cell survival, proliferation, and differentiation. Aberrant activation leads to increased expression of downstream targets (<span class="hl">mTOR, S6K</span>). Astragaloside IV exerts protective effects through <span class="hl">PIK3CA</span> targeting.</p>
+
+  <h3>Hedgehog (Hh) Signaling</h3>
+  <p>Involved in embryonic development and tissue repair. In IPF, Hh pathway is aberrantly activated, leading to proliferation and differentiation of fibroblasts and deposition of extracellular matrix. Target of Taladegib.</p>
+
+  <h3>TGF-β Pathway</h3>
+  <p>Central fibrogenic cytokine in IPF. Stimulates differentiation of fibroblasts into myofibroblasts—the key effector cells in the fibrotic process. Primary target of pirfenidone and nintedanib.</p>
+
+  <h3>Wnt/β-Catenin Pathway</h3>
+  <p> Aberrant activation implicated in IPF with increased expression of <span class="hl">cyclin D1 and c-myc</span>. Contributes to fibroblast proliferation and persistence.</p>
+
+  <h2>Emerging Mechanisms</h2>
+
+  <h3>SIRTuins (SIRT3/6/7)</h3>
+  <p>NAD+-dependent deacetylases regulating cellular metabolism, stress resistance, and longevity. Targeting the <span class="hl">PGC1-alpha/Sirt3 pathway, SOD2, and OGG1</span> represents potential therapeutic strategies.</p>
+
+  <h3>Cellular Senescence</h3>
+  <p>Accumulation of senescent cells promotes fibrosis through the <span class="hl">Senescence-Associated Secretory Phenotype (SASP)</span>—releasing pro-fibrotic factors including cytokines, growth factors, and proteases.</p>
+
+  <h3>COL1A1 & SP1</h3>
+  <p><span class="hl">COL1A1</span> (type I collagen) is a hub protein regulated by lncRNA H19. <span class="hl">SP1</span> transcription factor inhibition at DNA level reduces lung fibrosis.</p>
+
+  <h2>Summary: Therapeutic Targets</h2>
+  <table>
+    <thead>
+      <tr><th>Target</th><th>Function</th><th>Therapeutic Approach</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>PIK3CA</strong></td><td>PI3K-AKT pathway</td><td>Astragaloside IV, novel inhibitors</td></tr>
+      <tr><td><strong>TGF-β</strong></td><td>Fibroblast differentiation</td><td>Pirfenidone, Nintedanib</td></tr>
+      <tr><td><strong>Hedgehog</strong></td><td>Fibroblast proliferation</td><td>Taladegib</td></tr>
+      <tr><td><strong>SIRT3/6/7</strong></td><td>Metabolism, stress resistance</td><td>Sirtuin activators</td></tr>
+      <tr><td><strong>COL1A1</strong></td><td>Extracellular matrix</td><td>lncRNA H19 targeting</td></tr>
+      <tr><td><strong>SP1</strong></td><td>Transcription factor</td><td>DNA-level inhibition</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Chapter 04: Current Therapies -->
+<section class="chapter">
+  <div class="chapter-num">04 · Current Approved Therapies</div>
+  <h1>Current Approved Therapies</h1>
+
+  <p class="lead">Two antifibrotic therapies are currently FDA-approved for IPF, both demonstrating modest efficacy in slowing disease progression.</p>
+
+  <h2>Pirfenidone</h2>
+  <div class="card">
+    <div class="card-title">Mechanism & Efficacy</div>
+    <div class="card-body">
+      <strong>Mechanism:</strong> Inhibits TGF-β signaling; anti-inflammatory and anti-fibrotic properties<br>
+      <strong>Efficacy:</strong> ~700 mL FVC decline over 5 years<br>
+      <strong>Side Effects:</strong> GI symptoms, photosensitivity, liver toxicity
+    </div>
+  </div>
+
+  <h2>Nintedanib</h2>
+  <div class="card">
+    <div class="card-title">Mechanism & Efficacy</div>
+    <div class="card-body">
+      <strong>Mechanism:</strong> Tyrosine kinase inhibitor targeting TGF-β, PDGF, and VEGF pathways<br>
+      <strong>Efficacy:</strong> ~660 mL FVC decline over 5 years (40 mL difference vs pirfenidone, not statistically significant)<br>
+      <strong>Side Effects:</strong> Diarrhea, liver enzyme elevations, bleeding risk
+    </div>
+  </div>
+
+  <h2>Comparative Data</h2>
+  <table>
+    <thead>
+      <tr><th>Drug</th><th>Mechanism</th><th>5-Year FVC Decline</th><th>Key Limitations</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Pirfenidone</strong></td><td>TGF-β inhibition</td><td>~700 mL</td><td>GI, photosensitivity</td></tr>
+      <tr><td><strong>Nintedanib</strong></td><td>Multi-kinase inhibitor</td><td>~660 mL</td><td>Diarrhea, hepatotoxicity</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>Key Limitation:</strong> Neither drug reverses disease progression. Both show comparable efficacy, with the ~40 mL difference in FVC decline being statistically non-significant.
+  </div>
+</section>
+
+<!-- Chapter 05: Clinical Pipeline -->
+<section class="chapter">
+  <div class="chapter-num">05 · Clinical Pipeline 2024-2025</div>
+  <h1>Clinical Pipeline 2024-2025</h1>
+
+  <p class="lead">Multiple novel agents are advancing through clinical development, targeting diverse mechanisms beyond the current TGF-β-centric approaches.</p>
+
+  <h2>Phase 2a: AI-Discovered TNIK Inhibitor</h2>
+  <div class="card" style="border-left: 3pt solid var(--brand);">
+    <div class="card-title">Rentosertib (ISM001-055) — Nature Medicine, June 2025</div>
+    <div class="card-body">
+      <strong>Significance:</strong> First AI-generated small-molecule inhibitor to reach human Phase 2a trials in IPF<br>
+      <strong>Target:</strong> TNIK (Traf2 and NCK-interacting kinase)<br>
+      <strong>Design:</strong> Multicenter, double-blind, randomized, placebo-controlled<br>
+      <strong>Results:</strong> Improved lung function and reduced fibrosis<br>
+      <strong>Discovery:</strong> Generated using generative AI — a first-in-class approach
+    </div>
+  </div>
+
+  <h2>Other Pipeline Programs</h2>
+
+  <h3>Taladegib (Endeavor BioMedicines)</h3>
+  <p><span class="hl">Hedgehog signaling pathway inhibitor</span> that disrupts Hh pathway to prevent accumulation of myofibroblasts responsible for fibrosis.</p>
+
+  <h3>BEACON-IPF (Pliant Therapeutics)</h3>
+  <p><span class="hl">αvβ6 integrin inhibitor</span> targeting integrin-mediated TGF-β activation. Phase 2b/3 trial in IPF patients.</p>
+
+  <h3>FIBRONEER-IPF (Phase 3)</h3>
+  <p>Phase 3 trial (NCT05321069) in patients with or without prior antifibrotic therapy. Novel antifibrotic mechanism targeting <span class="hl">LOXL2</span> (collagen cross-linking enzyme).</p>
+
+  <h3>REGEND001 (Cell Therapy)</h3>
+  <p>Autologous transplantation of <span class="hl">P63+ lung progenitor cells</span> for lung tissue repair. Phase 1 clinical trial (European Respiratory Society).</p>
+
+  <h2>Combination Therapy: INJOURNEY Trial</h2>
+  <p>Tests <span class="hl">nintedanib with add-on pirfenidone</span> to evaluate safety of combination. Combined adverse effects remain a concern limiting this approach.</p>
+
+  <h2>Pipeline Summary</h2>
+  <table>
+    <thead>
+      <tr><th>Agent</th><th>Phase</th><th>Target/Mechanism</th><th>Company</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>Rentosertib</strong></td><td>Phase 2a</td><td>TNIK (AI-discovered)</td><td>ISM001</td></tr>
+      <tr><td><strong>Taladegib</strong></td><td>Clinical</td><td>Hedgehog pathway</td><td>Endeavor BioMedicines</td></tr>
+      <tr><td><strong>BEACON-IPF</strong></td><td>Phase 2b/3</td><td>αvβ6 integrin</td><td>Pliant Therapeutics</td></tr>
+      <tr><td><strong>FIBRONEER</strong></td><td>Phase 3</td><td>LOXL2</td><td>NCT05321069</td></tr>
+      <tr><td><strong>REGEND001</strong></td><td>Phase 1</td><td>P63+ progenitor cells</td><td>ERS Trial</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- Chapter 06: Emerging Targets -->
+<section class="chapter">
+  <div class="chapter-num">06 · Emerging Targets & Natural Products</div>
+  <h1>Emerging Targets & Natural Products</h1>
+
+  <h2>Natural Product: Astragaloside IV</h2>
+  <div class="card" style="border-left: 3pt solid #2d6a4f;">
+    <div class="card-title">Astragaloside IV (AS-IV) — Scientific Reports 2025</div>
+    <div class="card-body">
+      <strong>Source:</strong> <em>Astragalus membranaceus</em> (Traditional Chinese Medicine)<br>
+      <strong>Mechanism:</strong> Modulates PI3K-AKT pathway by targeting <span class="hl">PIK3CA</span><br>
+      <strong>Evidence:</strong> Reduced collagen accumulation in bleomycin-induced mouse model; significant pulmonary fibrosis reduction<br>
+      <strong>Potential:</strong> Novel antifibrotic therapeutic agent
+    </div>
+  </div>
+
+  <h2>Novel Small Molecules</h2>
+
+  <h3>SIRT3/6/7 Activators</h3>
+  <p>Targeting SIRTuins and the <span class="hl">PGC1-alpha/Sirt3 pathway, SOD2, and OGG1</span> may provide potential strategies for pulmonary fibrosis treatment (Frontiers, March 2025).</p>
+
+  <h3>COL1A1 Targeting</h3>
+  <p>Type I collagen (COL1A1) is a hub protein regulated by lncRNA H19. Inhibition of SP1 activity at the DNA level is an effective approach for treatment of lung fibrosis.</p>
+
+  <h2>Future Directions</h2>
+  <div class="two-col">
+    <div class="card">
+      <div class="card-title">Combination Therapy</div>
+      <div class="card-body">Multi-target approaches combining antifibrotics with emerging agents targeting different pathways</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Biomarker-Driven Medicine</div>
+      <div class="card-body">Patient stratification based on molecular profiles for personalized treatment selection</div>
+    </div>
+  </div>
+  <div class="two-col" style="margin-top: 12pt;">
+    <div class="card">
+      <div class="card-title">Regenerative Approaches</div>
+      <div class="card-body">Stem cell therapies (REGEND001) and gene therapies promoting lung regeneration</div>
+    </div>
+    <div class="card">
+      <div class="card-title">Market Expansion</div>
+      <div class="card-body">Rising awareness and healthcare spending to expand market, enabling greater drug development investment</div>
+    </div>
+  </div>
+</section>
+
+<!-- Chapter 07: Conclusion -->
+<section class="chapter">
+  <div class="chapter-num">07 · Conclusion</div>
+  <h1>Conclusion</h1>
+
+  <p class="lead">IPF remains a devastating disease with limited treatment options. The 2024-2025 pipeline offers renewed hope through diverse mechanisms and novel approaches.</p>
+
+  <h2>Summary of Key Advances</h2>
+  <ol>
+    <li><strong>AI-discovered drugs</strong> (Rentosertib) have entered Phase 2a clinical trials—marking a milestone in generative chemistry</li>
+    <li><strong>Multiple mechanism-targeted approaches</strong> are in development: Hh inhibition, integrin targeting, cell therapy</li>
+    <li><strong>Combination therapy</strong> strategies are being explored despite safety concerns</li>
+    <li><strong>Natural products</strong> like Astragaloside IV provide novel antifibrotic mechanisms</li>
+    <li><strong>Regenerative medicine</strong> approaches (P63+ progenitor cells) offer potential disease modification</li>
+  </ol>
+
+  <h2>Unmet Needs & Opportunities</h2>
+  <div class="callout">
+    <strong>Critical Unmet Need:</strong> No approved therapy reverses IPF progression. Current antifibrotics slow decline but cannot restore lung function.
+  </div>
+
+  <h2>References</h2>
+  <ul style="font-size: 9pt;">
+    <li>1. Nature Medicine. A generative AI-discovered TNIK inhibitor for IPF: Phase 2a trial. (June 2025)</li>
+    <li>2. Frontiers. SIRT3/6/7: promising therapeutic targets for pulmonary fibrosis. (March 2025)</li>
+    <li>3. Scientific Reports. Astragaloside IV mechanism in IPF via PI3K-AKT. (2025)</li>
+    <li>4. Springer. IPF Today and Tomorrow: Therapeutic Horizons. (May 2025)</li>
+    <li>5. AJMC. Emerging Therapeutic Innovations for IPF. (2025)</li>
+    <li>6. BMC Pulmonary Medicine. Long-term nintedanib vs pirfenidone comparison. (October 2025)</li>
+    <li>7. Rarediseaseadvisor. IPF Experimental Therapies. (February 2026)</li>
+    <li>8. Frontiers. Molecular targets in IPF via weighted gene co-expression analysis. (December 2024)</li>
+  </ul>
+
+  <div class="takeaway">
+    <div class="takeaway-label">Report Information</div>
+    Generated by ARP v24 Research Pipeline · April 2026<br>
+    Sources: PubMed literature search, Nature Medicine, Frontiers, Springer, BMC, AJMC, Rarediseaseadvisor
+  </div>
+</section>
+
+</body>
+</html>
