@@ -32,7 +32,7 @@ except ImportError:
 try:
     from groq import Groq
     import os
-    os.environ["GROQ_API_KEY"] = "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"
+    os.environ.setdefault("GROQ_API_KEY", os.environ.get("GROQ_API_KEY", ""))
     GROQ_CLIENT = Groq(api_key=os.environ["GROQ_API_KEY"])
     HAS_GROQ = True
 except Exception:
