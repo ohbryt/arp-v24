@@ -1,0 +1,4 @@
+target,method,alpha,n_calib,n_active_calib,n_test,n_selected,threshold,fdp_est
+KDM4A,bh,0.1,300,45,500,212,0.0424,0.1
+SLC7A11,bh,0.1,300,45,500,219,0.0438,0.1
+DGAT1,bh,0.1,300,45,500,182,0.0364,0.1
