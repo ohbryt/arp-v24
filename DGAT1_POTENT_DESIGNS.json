@@ -1,0 +1,42 @@
+[
+  {
+    "id": "DGAT1-POTENT-001",
+    "name": "Enhanced Pyrimido-oxazine Biphenyl Urea",
+    "smiles": "CC1(C)NC2=C(C(=NC(=N2)C3=CC=C(C=C3)C4=CC=C(C4)C5=CC=C(C=C5)NC(=O)NC6=CC=CC=C6)C(=O)O)N1C",
+    "mw": 558.6420000000002,
+    "logp": 6.954300000000005,
+    "rationale": [
+      "Pyrimido-oxazine core: H-bond with catalytic Asn",
+      "Biphenyl extension: Enhanced aromatic stacking in hydrophobic pocket",
+      "Urea linker: Appropriate length to reach catalytic His",
+      "Carboxylic acid: Tunnel entrance blocking",
+      "tert-butyl: Metabolic stability"
+    ]
+  },
+  {
+    "id": "DGAT1-POTENT-002",
+    "name": "Covalent Pyrimido-oxazine Acrylamide",
+    "smiles": "CC1(C)NC2=C(C(=NC(=N2)C3=CC=C(C=C3)C4CCC4CC(=O)NCC=CC(=O)O)N1C)C",
+    "mw": 449.55500000000023,
+    "logp": 3.690520000000002,
+    "rationale": [
+      "Pyrimido-oxazine: Binding scaffold",
+      "Acrylamide: Covalent warhead targeting catalytic His",
+      "Alkyl chain: Spacer to positioning warhead correctly",
+      "Carboxylic acid: Additional tunnel blocking"
+    ]
+  },
+  {
+    "id": "DGAT1-POTENT-003",
+    "name": "DGAT1 Bisubstrate Mimetic",
+    "smiles": "CCCCCCCC(=O)NCC1=CC=C(C=C1)C2=CC=C(C=C2)C3=CC=C(C=C3)NC(=O)NC4=CC=C(C=C4)C(=O)O",
+    "mw": 563.6980000000003,
+    "logp": 8.339500000000006,
+    "rationale": [
+      "C8 acyl chain: Acyl-CoA substrate mimic",
+      "Biphenyl-urea: Core recognition motif",
+      "Phenyl carboxylic acid: DAG mimic + tunnel blocking",
+      "Overall: Both substrate binding sites occupied"
+    ]
+  }
+]
