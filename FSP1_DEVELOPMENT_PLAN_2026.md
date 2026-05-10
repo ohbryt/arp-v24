@@ -311,7 +311,70 @@ python3 arp_orchestrator.py "FSP1 NSCLC ferroptosis" --playbook fsp1
 | `DGAT1_LUNG_COMPOUND_REPORT_2026.md` | Our NSCLC compounds |
 | `TWO_PAPERS_ANALYSIS_2026.md` | Paper 1 + Paper 2 |
 
+## 5. Risk Mitigation
+
+| Risk | Mitigation |
+|------|------------|
+| **Context-rich dependence** | Concordant biomarkers: FSP1 IHC + KEAP1/STK11/NFE2L2 + ACSL4/lipid-peroxidation + biopsy PD |
+| **Chemistry failure** | Parallel scaffolds + early rodent/human cross-species |
+| **Normal-tissue oxidative liability** | Intermittent dosing + tumor exposure optimization + monotherapy PD first |
+
+---
+
+## 6. MASH Programme
+
+### 6.1 Current Landscape (2024-2025)
+
+| Drug | Approval | Indication | Gap |
+|------|----------|-----------|-----|
+| Resmetirom | FDA 2024 | Non-cirrhotic F2-F3 | ❌ Not F4 |
+| Semaglutide | FDA 2025 | Non-cirrhotic F2-F3 | Modest fibrosis |
+| Rezdiffra | EMA | Non-cirrhotic fibrosis | ❌ Not F4 |
+
+**Unmet needs:** Cirrhosis (F4), fibrosis reversal, durable enrichment, combination tolerability
+
+### 6.2 Failure Modes
+
+| Mode | Description |
+|------|-------------|
+| Biological non-response | No histological improvement |
+| Pathway escape | Single target bypass (ACLY → ACSS2) |
+| F4 decompensation | Loss at cirrhosis |
+| Metabolic bypass | Flux shifts elsewhere |
+
+### 6.3 Target Priority
+
+| Rank | Target | Rationale | Evidence |
+|------|--------|-----------|----------|
+| **1** | **Dual ACLY/ACSS2** | No bypass = max efficacy | 2026 Cell Metabolism (EVT0185) |
+| 2 | THRβ | Approved | Resmetirom |
+| 2 | GLP-1/Glucagon | Approved + Ph3 | Semaglutide, Survodutide |
+| 3 | FGF21 | Ph3 | Pegozafermin, Efruxifermin |
+| 4 | PDK4 | Preclinical | No clinical path |
+
+### 6.4 Why Dual ACLY/ACSS2 #1
+
+```
+ACLY alone → ACSS2 bypass (acetate → acetyl-CoA)
+ACSS2 alone → ACLY bypass (citrate → acetyl-CoA)
+Dual → NO BYPASS
+```
+
+**EVT0185 (2026):** steatosis ↓, insulin resistance ↓, fibrosis ↓
+
+
+---
+
+## 7. Updated Portfolio
+
+| Rank | Target | Indication | Status |
+|------|--------|-----------|--------|
+| 1 | **FSP1** | NSCLC (KEAP1/STK11) | Preclinical |
+| 2 | **Dual ACLY/ACSS2** | MASH | Preclinical |
+| 3 | DGAT1 + SLC7A11 | NSCLC | Our work |
+| 4 | GLP-1/FXR | MASH | Our design |
+| 5 | DGAT1-LUNG-003 | NSCLC | Synthesized |
+
 ---
 
 *Report generated: 2026-05-10 | ARP v24*
-*Playbooks: discovery, screening, admet, synthetic_lethal, sarcopenia, cardio, masld, fsp1*
