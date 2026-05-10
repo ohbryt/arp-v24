@@ -309,7 +309,7 @@ def cmd_search(args):
 # ============================================================
 def cmd_boltz(args):
     """Boltz-2 binding affinity prediction (The Last Mile solution)"""
-    from boltz2_client import Boltz2Client, boltz_status, boltz_predict, boltz_screen
+    from boltz2_client import boltz_status, boltz_predict, boltz_screen
     
     print_header("\n⚡ Boltz-2: ML-Based Binding Affinity Prediction")
     print("Based on: Wang et al. 2026, J Chem Inf Model (PMID 42095677)")
@@ -318,6 +318,9 @@ def cmd_boltz(args):
     
     if args.subcommand == "status":
         boltz_status()
+        print_info("\nNOTE: Client installed but needs backend:")
+        print("  Option 1: NVIDIA NIM (requires API key)")
+        print("  Option 2: Local Docker: docker run -p 8000:8000 nvidia/boltz2")
     elif args.subcommand == "predict":
         if not args.pdb:
             print_error("--pdb required")
@@ -328,7 +331,7 @@ def cmd_boltz(args):
             print_error("--pdb and --library required")
             return
         hits = boltz_screen(args.pdb, args.library, args.threshold or 0.5)
-        print_success(f"Screening complete: {len(hits)} hits")
+        print_success(f"Screening complete")
 
 # ============================================================
 # VERIFY COMMAND
