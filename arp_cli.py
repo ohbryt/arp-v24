@@ -305,6 +305,59 @@ def cmd_search(args):
     return results
 
 # ============================================================
+# BOLTZ COMMAND
+# ============================================================
+def cmd_boltz(args):
+    """Boltz-2 binding affinity prediction (The Last Mile solution)"""
+    from boltz2_client import Boltz2Client, boltz_status, boltz_predict, boltz_screen
+    
+    print_header("\n⚡ Boltz-2: ML-Based Binding Affinity Prediction")
+    print("Based on: Wang et al. 2026, J Chem Inf Model (PMID 42095677)")
+    print("Key finding: Boltz-2 was the ONLY ML model that generalized to unseen DUD-E data")
+    print("=" * 60)
+    
+    if args.subcommand == "status":
+        boltz_status()
+    elif args.subcommand == "predict":
+        if not args.pdb:
+            print_error("--pdb required")
+            return
+        boltz_predict(args.pdb, args.ligand)
+    elif args.subcommand == "screen":
+        if not args.pdb or not args.library:
+            print_error("--pdb and --library required")
+            return
+        hits = boltz_screen(args.pdb, args.library, args.threshold or 0.5)
+        print_success(f"Screening complete: {len(hits)} hits")
+
+# ============================================================
+# VERIFY COMMAND
+# ============================================================
+def cmd_verify(args):
+    """Verify compounds, targets, literature using ARP Verifier System"""
+    from arp_verifier import ARPVerifier
+    
+    verifier = ARPVerifier()
+    
+    if args.smiles:
+        result = verifier.verify_compound(args.smiles)
+        verifier.print_result(result, f"Compound: {args.smiles}")
+    elif args.uniprot:
+        result = verifier.verify_target(uniprot_id=args.uniprot)
+        verifier.print_result(result, f"Target: {args.uniprot}")
+    elif args.pdb:
+        result = verifier.verify_pdb_structure(args.pdb)
+        verifier.print_result(result, f"PDB: {args.pdb}")
+    elif args.pmid:
+        result = verifier.verify_literature(pmid=args.pmid)
+        verifier.print_result(result, f"Literature: {args.pmid}")
+    elif args.ic50 is not None:
+        result = verifier.verify_ic50(args.ic50)
+        verifier.print_result(result, f"IC50: {args.ic50} nM")
+    else:
+        print_info("Use --smiles, --uniprot, --pdb, --pmid, or --ic50")
+
+# ============================================================
 # MAIN
 # ============================================================
 def main():
@@ -363,6 +416,31 @@ Based on Printing Press philosophy:
     search_parser.add_argument('--limit', type=int, help='Max results')
     search_parser.add_argument('--json', action='store_true', help='Output as JSON')
     search_parser.set_defaults(func=cmd_search)
+    
+    # boltz command
+    boltz_parser = subparsers.add_parser('boltz', help='Boltz-2 binding prediction')
+    boltz_subparsers = boltz_parser.add_subparsers(dest='subcommand', help='Boltz-2 subcommands')
+    
+    boltz_status_parser = boltz_subparsers.add_parser('status', help='Check Boltz-2 status')
+    boltz_predict_parser = boltz_subparsers.add_parser('predict', help='Run single prediction')
+    boltz_predict_parser.add_argument('--pdb', required=True, help='Target PDB file')
+    boltz_predict_parser.add_argument('--ligand', help='Ligand SDF file')
+    boltz_screen_parser = boltz_subparsers.add_parser('screen', help='Screen compound library')
+    boltz_screen_parser.add_argument('--pdb', required=True, help='Target PDB file')
+    boltz_screen_parser.add_argument('--library', required=True, help='SDF library directory')
+    boltz_screen_parser.add_argument('--threshold', type=float, help='Hit threshold (0-1)')
+    
+    boltz_parser.set_defaults(func=cmd_boltz)
+    
+    # verify command
+    verify_parser = subparsers.add_parser('verify', help='Verify with ARP Verifier System')
+    verify_parser.add_argument('--smiles', help='SMILES string to verify')
+    verify_parser.add_argument('--uniprot', help='UniProt ID to verify')
+    verify_parser.add_argument('--pdb', help='PDB ID to verify')
+    verify_parser.add_argument('--pmid', help='PMID to verify')
+    verify_parser.add_argument('--ic50', type=float, help='IC50 value to verify (nM)')
+    verify_parser.set_defaults(func=cmd_verify)
+
     
     args = parser.parse_args()
     
