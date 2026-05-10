@@ -62,8 +62,6 @@ DGAT1i (lipid droplets) + SLC7A11i (GSH) + FSP1i (CoQ)
 
 ## 2. Target Product Profile
 
-### 2.1 Ideal Properties
-
 | Property | Target |
 |----------|--------|
 | **Modality** | Oral small molecule |
@@ -73,17 +71,11 @@ DGAT1i (lipid droplets) + SLC7A11i (GSH) + FSP1i (CoQ)
 | **PK/PD** | Tumor CoQ redox shift, lipid peroxidation |
 | **Safety** | No RBC, neuronal, immune-cell liability |
 
-### 2.2 Exclusions (No-Go Criteria)
-
-- ❌ Efficacy requiring exogenous GPX4 co-inhibition
-- ❌ Activity lost when serum lipoproteins normalised
-- ❌ Immune-cell toxicity narrowing combination window
+**Exclusions:** GPX4 co-inhibition required, activity lost with lipoproteins, immune toxicity
 
 ---
 
 ## 3. Chemotypes (4 Parallel Tracks)
-
-### 3.1 Inhibitor Classes
 
 | Chemotype | Mechanism | Developability | Status |
 |-----------|-----------|---------------|--------|
@@ -92,288 +84,164 @@ DGAT1i (lipid droplets) + SLC7A11i (GSH) + FSP1i (CoQ)
 | **iFSP1-like** | First-gen on-target ligands | ⭐ Medium | Optimization |
 | **icFSP1-like** | Condensate-forming | ⭐ Low | Mechanistic probe |
 
-### 3.2 Recommended Priority
-
-**FSEN1/viFSP1-like chemistry** = most developable:
-- Standard medicinal chemistry optimization
-- Species bridging (human + rodent)
-- PK/PD modelling tractable
-
 ---
 
 ## 4. Assay Cascade
 
-### 4.1 Biochemical
+### Biochemical
+| Assay | Purpose |
+|-------|---------|
+| Recombinant human/mouse FSP1 | IC50, species bridge |
+| Orthogonal binding | Confirmation |
+| Flavoprotein selectivity | Safety |
 
-```
-1. Recombinant human FSP1 enzymology (IC50)
-2. Recombinant mouse FSP1 (species bridging)
-3. Orthogonal binding assay
-4. Selectivity panel: flavoproteins, redox enzymes
-5. CYP inhibition, hERG liability
-```
+### Cellular (NSCLC Panel)
+| Read-out | Method | Confirm |
+|----------|--------|---------|
+| Cell death rescue | Ferrostatin-1/liproxstatin | ✅ Ferroptosis |
+| Lipid peroxidation | BODIPY-C11 | ✅ |
+| CoQ redox shift | LC-MS | ✅ |
 
-### 4.2 Cellular (NSCLC Panel)
-
-**Genotype-annotated panel:**
-- KEAP1-altered
-- STK11-altered
-- NFE2L2-altered
-- EGFR-mutant
-- re-genotype in-house before use
-
-**Three essential read-outs:**
-| Read-out | Method | Ferrotopsis Confirm |
-|----------|--------|-------------------|
-| Cell death rescue | Ferrostatin-1 or liproxstatin rescue | ✅ |
-| Lipid peroxidation | BODIPY-C11 signal | ✅ |
-| CoQ redox shift | LC-MS (CoQ10/CoQ10H2) | ✅ |
-
-### 4.3 In Vivo-Early Models
-
-Bring in earlier than usual (stronger in vivo dependence):
+### In Vivo-Early (Bring In Earlier)
 - 3D organoids
-- Co-culture systems
 - Syngeneic orthotopic models
-- KRAS-driven GEMM-derived transplants
+- KRAS-driven GEMM transplants
 
-### 4.4 Stable Isotope Studies
-
-```
-^13C-glucose tracing → NADPH-generating pathways
-^13C-glutamine tracing → Lipid remodelling
-Oxidized phospholipid lipidomics (not Seahorse alone)
-```
+### Systems Metabolism
+- ^13C-glucose → NADPH pathways
+- ^13C-glutamine → lipid remodelling
+- Oxidized phospholipid lipidomics
 
 ---
 
 ## 5. In Vivo Package (3 Tiers)
 
-### Tier 1: Fast Efficacy
-- Subcutaneous NSCLC models
-- Orthotopic NSCLC models
-- FSP1-high/KEAP1-STK11-altered biology
-
-### Tier 2: Immune-Combination
-- Immune-competent models
-- Anti-PD-(L)1 combination
-- Dual ICB combination
-
-### Tier 3: Radiotherapy Combination
-- KEAP1-inactive + radiotherapy
-- CoQ-FSP1 axis for radiation resistance
+| Tier | Models | Read-outs |
+|------|--------|-----------|
+| 1: Fast efficacy | SubQ + orthotopic NSCLC | TGI, PD |
+| 2: Immune combo | Immune-competent | + anti-PD-(L)1, dual ICB |
+| 3: RT combo | KEAP1-inactive | + radiotherapy |
 
 ### PK/PD Markers
-| Marker | Sample | Read-out |
-|--------|--------|----------|
-| Tumor unbound exposure | Tumor | LC-MS |
-| Tumor:RBC ratio | Blood | LC-MS |
-| Tumor CoQ redox state | Tumor | LC-MS |
-| 4-HNE immunostaining | Tumor | IHC |
-| Plasma oxidative stress | Plasma | ELISA |
+| Marker | Sample |
+|--------|--------|
+| Tumor unbound exposure | LC-MS |
+| Tumor:RBC ratio | LC-MS |
+| Tumor CoQ redox | LC-MS |
+| 4-HNE | IHC |
+| Plasma oxidative stress | ELISA |
 
-### Safety Package
-- Haematology (CBC)
-- Ophthalmology (fundoscopy)
-- Neurobehaviour ( Irwin test)
-- Cytokine release (ELISA)
-- Immune-cell viability (flow cytometry)
+### Safety
+- Haematology, ophthalmology, neurobehaviour
+- Cytokine release, immune-cell viability
 
 ---
 
 ## 6. Clinical Development Plan
 
-### 6.1 First Human Population
-
+### First Human Population
 **Advanced LUAD after standard therapy, enriched by:**
 - FSP1-high IHC
 - KEAP1, STK11, or NFE2L2 alterations
 
-### 6.2 Dose Selection
+### Dose Selection
+**Project Optimus principles** (not classical MTD)
 
-**Project Optimus principles** (not classical MTD):
-- Dose optimization over dose maximization
-- Pharmacologically guided endocrinology
+### Expansion Cohorts
+| Cohort | Population |
+|--------|------------|
+| 1 | Refractory KEAP1/STK11-altered NSCLC (monotherapy) |
+| 2 | KEAP1-inactive NSCLC + palliative radiotherapy |
+| 3 | NSCLC + PD-(L)1 blockade (post safety) |
 
-### 6.3 Expansion Cohorts
-
-| Cohort | Population | Regimen |
-|--------|------------|---------|
-| 1 | Refractory KEAP1/STK11-altered NSCLC | FSP1i monotherapy |
-| 2 | KEAP1-inactive NSCLC | FSP1i + palliative radiotherapy |
-| 3 | NSCLC (post monotherapy safety) | FSP1i + PD-(L)1 blockade |
-
-### 6.4 On-Treatment Biopsy
-
-**Mandatory** — success depends on proving ferroptosis engagement, not just target occupancy.
+### On-Treatment Biopsy
+**Mandatory** — prove ferroptosis engagement, not just target occupancy
 
 ---
 
 ## 7. Go/No-Go Criteria
 
-### Go Criteria (ALL must be met)
-
-- [ ] Enzyme IC50: low-nanomolar range (human FSP1)
-- [ ] Biochemical selectivity: ≥30-fold over redox liabilities
-- [ ] Cell killing rescued by ferroptosis blockers (FSP1-high NSCLC)
+### Go (ALL must be met)
+- [ ] IC50: low-nanomolar (human FSP1)
+- [ ] Selectivity: ≥30-fold over redox liabilities
+- [ ] Cell killing rescued by ferroptosis blockers
 - [ ] Robust tumor PD signal in vivo
-- [ ] Monotherapy TGI >50% OR compelling additivity with radio/immuno
+- [ ] TGI >50% OR additivity with radio/immuno
 - [ ] No >10% body-weight loss
 
-### No-Go Criteria
-
-- ❌ Efficacy depends only on exogenous GPX4 co-inhibition
-- ❌ Activity disappears when serum lipoproteins normalized
-- ❌ Immune-cell toxicity narrows combination window
-
----
-
-## 8. Timeline & Cost (Estimate)
-
-| Phase | Duration | Cost (USD) |
-|-------|----------|------------|
-| Lead discovery | 12-18 months | $8-15M |
-| IND-enabling | 12-18 months | $10-20M |
-| Phase I | 12-18 months | $15-25M |
-| **Total to Phase I** | **33-42 months** | **$18-35M** |
+### No-Go
+- ❌ Requires exogenous GPX4 co-inhibition
+- ❌ Activity lost with lipoproteins normalized
+- ❌ Immune toxicity narrows combination window
 
 ---
 
-## 9. Competitive Landscape
+## 8. Modality Comparison
 
-| Drug | Target | Company | Status |
-|------|--------|---------|--------|
-| iFSP1 | FSP1 | Academic | Preclinical |
-| icFSP1 | FSP1 | Academic | Preclinical |
-| viFSP1 | FSP1 | Academic | Preclinical |
-| FSEN1 | FSP1 | Academic | Preclinical + co-crystal |
-| Telaglenastat | GLS1 | Calithera | Phase II (NSCLC) |
-| DRP-104 | GLS1 | Drill | Phase I/II |
-| AZD3965 | MCT1 | AstraZeneca | Phase I |
-
-**Gap:** No FSP1 inhibitor in clinical trials → First-in-class opportunity
+| Modality | Decision | Rationale |
+|----------|----------|-----------|
+| **Small molecule** | ✅ Primary | Intracellular enzyme, systemic metastatic, rapid PD |
+| RNA therapeutic | Secondary | Delivery harder to metastases |
+| PROTAC | Exploratory | Localization, oral PK harder |
+| Biologic | ❌ Do not | Poor fit for intracellular redox enzyme |
 
 ---
 
-## 10. Connection to Our Pipeline
+## 9. Timeline & Cost
 
-### 10.1 Playbook Integration
+| Scenario | Timeline | Cost | Main Drivers |
+|----------|----------|------|-------------|
+| Low | 30-33 months | $15-20M | Parallel chemistry, orthotopic models |
+| Medium | 33-38 months | $20-28M | Immune-competent, biopsy PD |
+| High | 38-42 months | $28-35M | + Translational pack |
 
-```bash
-# Run FSP1 playbook
-python3 arp_orchestrator.py "FSP1 NSCLC ferroptosis" --playbook fsp1
-```
-
-### 10.2 Triple Ferroptosis Combination
-
-```
-┌──────────────────────────────────────────────────────────────┐
-│              Triple Ferroptosis Induction (NSCLC)            │
-├──────────────────────────────────────────────────────────────┤
-│                                                              │
-│  DGAT1i (our DGAT1-LUNG series)                            │
-│  └── Lipid droplet depletion → PUFA accumulation            │
-│                                                              │
-│  SLC7A11i (our work)                                        │
-│  └── GSH depletion → GPX4 dysfunction                      │
-│                                                              │
-│  FSP1i (NEW: this plan)                                     │
-│  └── CoQ rescue blockade → Lipid peroxidation               │
-│                                                              │
-│  = Maximum ferroptosis without normal cell toxicity         │
-└──────────────────────────────────────────────────────────────┘
-```
-
-### 10.3 MASLD/FSP1 Synergy
-
-| Indication | Target | Combination |
-|-----------|--------|-------------|
-| NSCLC | FSP1i | + Radiotherapy/Immunotherapy |
-| MASLD | ACLY/ACSS2i | + Resmetirom/GLP-1 |
+**Main drivers:** Parallel series, orthotopic + immune models, biopsy-grade PD
 
 ---
 
-## 11. Key References
-
-1. Nature 2025: FSP1 genetic/pharmacological disruption in lung tumors
-2. Nature Communications: KEAP1-NRF2-CoQ-FSP1 axis, radiation resistance
-3. FSEN1 co-crystal structure
-4. iFSP1, icFSP1, viFSP1 chemical biology
-
----
-
-## 12. Files
-
-| File | Purpose |
-|------|---------|
-| `arp_orchestrator.py` | FSP1 playbook added |
-| `FSP1_DEVELOPMENT_PLAN_2026.md` | This document |
-| `DGAT1_LUNG_COMPOUND_REPORT_2026.md` | Our NSCLC compounds |
-| `TWO_PAPERS_ANALYSIS_2026.md` | Paper 1 + Paper 2 |
-
-## 5. Risk Mitigation
+## 10. Risk Mitigation
 
 | Risk | Mitigation |
 |------|------------|
-| **Context-rich dependence** | Concordant biomarkers: FSP1 IHC + KEAP1/STK11/NFE2L2 + ACSL4/lipid-peroxidation + biopsy PD |
-| **Chemistry failure** | Parallel scaffolds + early rodent/human cross-species |
-| **Normal-tissue oxidative liability** | Intermittent dosing + tumor exposure optimization + monotherapy PD first |
+| Context-rich dependence | Concordant biomarkers: FSP1 IHC + KEAP1/STK11/NFE2L2 + biopsy PD |
+| Chemistry failure | Parallel scaffolds + early cross-species |
+| Normal-tissue toxicity | Intermittent dosing + monotherapy PD first |
 
 ---
 
-## 6. MASH Programme
+## 11. Competitive Landscape
 
-### 6.1 Current Landscape (2024-2025)
+| Drug | Target | Status |
+|------|--------|--------|
+| FSEN1 | FSP1 | Preclinical + co-crystal |
+| viFSP1 | FSP1 | Preclinical |
+| iFSP1 | FSP1 | Preclinical |
+| icFSP1 | FSP1 | Preclinical |
+| Telaglenastat | GLS1 | Phase II |
+| AZD3965 | MCT1 | Phase I |
 
-| Drug | Approval | Indication | Gap |
-|------|----------|-----------|-----|
-| Resmetirom | FDA 2024 | Non-cirrhotic F2-F3 | ❌ Not F4 |
-| Semaglutide | FDA 2025 | Non-cirrhotic F2-F3 | Modest fibrosis |
-| Rezdiffra | EMA | Non-cirrhotic fibrosis | ❌ Not F4 |
-
-**Unmet needs:** Cirrhosis (F4), fibrosis reversal, durable enrichment, combination tolerability
-
-### 6.2 Failure Modes
-
-| Mode | Description |
-|------|-------------|
-| Biological non-response | No histological improvement |
-| Pathway escape | Single target bypass (ACLY → ACSS2) |
-| F4 decompensation | Loss at cirrhosis |
-| Metabolic bypass | Flux shifts elsewhere |
-
-### 6.3 Target Priority
-
-| Rank | Target | Rationale | Evidence |
-|------|--------|-----------|----------|
-| **1** | **Dual ACLY/ACSS2** | No bypass = max efficacy | 2026 Cell Metabolism (EVT0185) |
-| 2 | THRβ | Approved | Resmetirom |
-| 2 | GLP-1/Glucagon | Approved + Ph3 | Semaglutide, Survodutide |
-| 3 | FGF21 | Ph3 | Pegozafermin, Efruxifermin |
-| 4 | PDK4 | Preclinical | No clinical path |
-
-### 6.4 Why Dual ACLY/ACSS2 #1
-
-```
-ACLY alone → ACSS2 bypass (acetate → acetyl-CoA)
-ACSS2 alone → ACLY bypass (citrate → acetyl-CoA)
-Dual → NO BYPASS
-```
-
-**EVT0185 (2026):** steatosis ↓, insulin resistance ↓, fibrosis ↓
-
+**Gap:** No FSP1 in clinical trials → **First-in-class**
 
 ---
 
-## 7. Updated Portfolio
+## 12. Portfolio
 
 | Rank | Target | Indication | Status |
 |------|--------|-----------|--------|
-| 1 | **FSP1** | NSCLC (KEAP1/STK11) | Preclinical |
-| 2 | **Dual ACLY/ACSS2** | MASH | Preclinical |
-| 3 | DGAT1 + SLC7A11 | NSCLC | Our work |
-| 4 | GLP-1/FXR | MASH | Our design |
-| 5 | DGAT1-LUNG-003 | NSCLC | Synthesized |
+| 1 | **FSP1** | NSCLC | First-in-class |
+| 2 | **Dual ACLY/ACSS2** | MASH | First-in-class |
+| 3 | DGAT1 + SLC7A11 | NSCLC | Triple ferroptosis |
+| 4 | GLP-1/FXR | MASH | Dual agonist |
+
+---
+
+## 13. Open Questions
+
+| Question | Implication |
+|----------|-------------|
+| How narrow is responsive population? | Biomarker-driven |
+| Monotherapy or combo first? | Signal-seeking strategy |
+| PDK4/Complex-I | Backup concepts only |
 
 ---
 

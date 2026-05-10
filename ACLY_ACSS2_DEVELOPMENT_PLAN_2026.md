@@ -202,4 +202,84 @@ Deuterated water → DNL rate
 
 ---
 
+## 10. Modality Comparison
+
+| Programme | Small Molecule | RNA | PROTAC | Biologic |
+|-----------|:-------------:|:---:|:------:|:--------:|
+| **NSCLC FSP1** | ✅ Primary | Secondary | Exploratory | ❌ Do not |
+| **MASH ACLY/ACSS2** | ✅ Primary | Secondary | Exploratory | ❌ Do not |
+
+**NSCLC FSP1 small molecule rationale:**
+- Intracellular enzyme
+- Systemic metastatic disease
+- Rapid PD iteration needed
+- iFSP1, icFSP1, viFSP1, FSEN1 chemotypes available
+
+**MASH small molecule rationale:**
+- Chronic oral therapy
+- Dual-enzyme control
+- EVT0185 lead, bempedoic acid precedent
+
+---
+
+
+## 11. Assay Cascade Summary
+
+| Layer | NSCLC FSP1 | MASH ACLY/ACSS2 |
+|-------|-----------|----------------|
+| **Biochemistry** | Recombinant human/mouse FSP1, flavoprotein selectivity | Dual ACLY/ACSS2 enzymology, residence time |
+| **Mechanistic cell PD** | BODIPY-C11, 4-HNE, CoQ/CoQH2 LC-MS, ferroptosis blocker rescue | Acetyl-CoA, H3K27ac/H3K9ac, ^13C-glucose/acetate flux |
+| **Cell efficacy** | FSP1-high NSCLC panel, organoids | Hepatocytes, HSCs, co-culture |
+| **Systems metabolism** | OCR/ECAR, isotope tracing | DNL tracer, glucose/acetate routing |
+| **In vivo** | Orthotopic/syngeneic/PDX, RT+ICI combos | 2 MASH models, MRI-PDFF, fibrosis biomarkers |
+| **PK/PD** | Tumor unbound, tumor:RBC, serial PD biopsy | Liver:plasma, liver acetyl-CoA suppression |
+| **Safety** | Hematology, neuro, immune-cell fitness | Uric acid, tendon, lipids, DILI |
+
+---
+
+
+## 12. Timeline & Cost (Indicative)
+
+### NSCLC FSP1
+| Scenario | Timeline | Cost | Drivers |
+|----------|----------|------|---------|
+| Low | 30-33 months | $15-20M | Parallel chemistry, orthotopic models |
+| Medium | 33-38 months | $20-28M | Immune-competent models, biopsy PD |
+| High | 38-42 months | $28-35M | + Comprehensive translational pack |
+
+
+### MASH ACLY/ACSS2
+| Scenario | Timeline | Cost | Drivers |
+|----------|----------|------|---------|
+| Low | 27-31 months | $12-18M | Chronic tox, isotope flux |
+| Medium | 30-36 months | $15-24M | + Precision-cut liver slices |
+| High | 36-39 months | $24-28M | + Biomarker method development |
+
+
+---
+
+
+## 13. If Only One Programme
+
+| Programme | Rationale |
+|-----------|-----------|
+| **MASH ACLY/ACSS2** | Safer bet: ACLY clinically validated (bempedoic acid) |
+| **NSCLC FSP1** | Higher upside, higher variance |
+
+
+---
+
+## 14. Open Questions
+
+| Programme | Main Question |
+|-----------|---------------|
+| **NSCLC FSP1** | How narrow is clinically responsive biomarker population? Monotherapy vs combo? |
+| **MASH ACLY/ACSS2** | Anti-fibrotic effect in humans without tolerability penalty? |
+
+**Backup concepts:**
+- PDK4 → back-up MASH/insulin resistance concept
+- Complex-I/Metformin → NSCLC comparator pathway
+
+---
+
 *Report generated: 2026-05-10 | ARP v24*
