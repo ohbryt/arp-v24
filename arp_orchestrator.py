@@ -35,7 +35,8 @@ class Playbook(Enum):
     SYNTHETIC_LETHAL = "synthetic_lethal"  # SL pair identification
     SARCOPENIA = "sarcopenia"         # Sarcopenia drug development
     CARDIO = "cardio"               # Cardiotoxicity screening (T-World)
-    MASLD = "masld"                # MASLD/NASH drug development (Paper 1 + 2 combined)
+    MASLD = "masld"                # MASLD/NASH drug development
+    FSP1 = "fsp1"                  # FSP1 NSCLC ferroptosis (KEAP1/STK11) (Paper 1 + 2 combined)
 
 PLAYBOOK_STEPS = {
     Playbook.DISCOVERY: [
@@ -74,6 +75,14 @@ PLAYBOOK_STEPS = {
         {"agent": "literature", "action": "find_inhibitors", "targets": ["hERG", "KCNH2", "KCNE1", "KCNQ1"], "output": "cardio_reference"},
         {"agent": "cardio", "action": "check_tworld", "output": "tworld_status"},
         {"agent": "cardio", "action": "simulate_drug", "compound": "test", "output": "simulation_result"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
+    ],
+    # NEW: FSP1 playbook (NSCLC ferroptosis)
+    Playbook.FSP1: [
+        {"agent": "literature", "action": "search_pubmed", "query": "FSP1 ferroptosis NSCLC KEAP1 STK11", "output": "pmids"},
+        {"agent": "literature", "action": "find_inhibitors", "targets": ["FSP1", "GPX4", "SLC7A11", "ACSL4"], "output": "ferroptosis_targets"},
+        {"agent": "target", "action": "get_uniprot", "gene_name": "FSP1", "output": "uniprot"},
+        {"agent": "cardio", "action": "check_tworld", "output": "tworld_status"},
         {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
     ],
     # NEW: MASLD playbook (combines Paper 1 adipose epigenomics + Paper 2 T-World)
