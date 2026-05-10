@@ -35,6 +35,7 @@ class Playbook(Enum):
     SYNTHETIC_LETHAL = "synthetic_lethal"  # SL pair identification
     SARCOPENIA = "sarcopenia"         # Sarcopenia drug development
     CARDIO = "cardio"               # Cardiotoxicity screening (T-World)
+    MASLD = "masld"                # MASLD/NASH drug development (Paper 1 + 2 combined)
 
 PLAYBOOK_STEPS = {
     Playbook.DISCOVERY: [
@@ -73,6 +74,14 @@ PLAYBOOK_STEPS = {
         {"agent": "literature", "action": "find_inhibitors", "targets": ["hERG", "KCNH2", "KCNE1", "KCNQ1"], "output": "cardio_reference"},
         {"agent": "cardio", "action": "check_tworld", "output": "tworld_status"},
         {"agent": "cardio", "action": "simulate_drug", "compound": "test", "output": "simulation_result"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
+    ],
+    # NEW: MASLD playbook (combines Paper 1 adipose epigenomics + Paper 2 T-World)
+    Playbook.MASLD: [
+        {"agent": "literature", "action": "search_pubmed", "query": "MASLD NASH drug development 2026", "output": "pmids"},
+        {"agent": "literature", "action": "find_inhibitors", "targets": ["PPARG", "FXR", "GLP1R", "THRB", "FGF19", "SGLT2", "DGAT1"], "output": "masld_targets"},
+        {"agent": "target", "action": "get_uniprot", "gene_name": "DGAT1", "output": "uniprot"},
+        {"agent": "cardio", "action": "check_tworld", "output": "tworld_status"},
         {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
     ],
 }
@@ -212,6 +221,35 @@ class LiteratureAgent:
             ],
             "KCNH2": [
                 {"name": "hERG current (IKr)", "note": "Rapid delayed rectifier potassium", "source": "PMID:10801364", "type": "ion channel"},
+            ],
+            # MASLD/NASH targets (Paper 1: adipose epigenomics)
+            "PPARG": [
+                {"name": "Pioglitazone", "mechanism": "PPARγ agonist", "source": "PMID:24409002", "type": "FDA approved", "indication": "NASH/insulin resistance"},
+                {"name": "Rosiglitazone", "mechanism": "PPARγ agonist", "source": "PMID:24409002", "type": "Approved", "indication": "NASH"},
+            ],
+            "FXR": [
+                {"name": "Obeticholic acid (OCA)", "mechanism": "FXR agonist", "source": "PMID:27928025", "type": "FDA approved", "indication": "NASH fibrosis"},
+                {"name": "Cilofexor (GS-9674)", "mechanism": "FXR agonist", "source": "NCT02943447", "type": "Phase 2", "indication": "NASH"},
+            ],
+            "GLP1R": [
+                {"name": "Semaglutide", "mechanism": "GLP-1 agonist", "source": "NCT03987451", "type": "FDA approved", "indication": "NASH/obesity"},
+                {"name": "Retatrutide (GLP-1/GIP/Glucagon)", "mechanism": "Triple agonist", "source": "NCT04867712", "type": "Phase 3", "indication": "MASLD/NASH"},
+                {"name": "Tirzepatide (GIP/GLP-1)", "mechanism": "Dual agonist", "source": "NCT04166773", "type": "FDA approved", "indication": "NASH"},
+            ],
+            "THRB": [
+                {"name": "Resmetirom (MGL-3196)", "mechanism": "THR-β agonist", "source": "NCT04902961", "type": "FDA approved", "indication": "NASH/MASLD"},
+            ],
+            "FGF19": [
+                {"name": "Aldafermin (NGM282)", "mechanism": "FGF19 analog", "source": "PMID:31034653", "type": "Phase 2", "indication": "NASH fibrosis"},
+            ],
+            "SGLT2": [
+                {"name": "Empagliflozin", "mechanism": "SGLT2 inhibitor", "source": "NCT04753671", "type": "FDA approved", "indication": "MASLD/NASH"},
+                {"name": "Dapagliflozin", "mechanism": "SGLT2 inhibitor", "source": "NCT04867712", "type": "FDA approved", "indication": "MASLD"},
+            ],
+            "DGAT1": [
+                {"name": "A-922500", "ic50_nM": 7, "source": "PMID:21990351", "type": "potent"},
+                {"name": "PF-06430079", "ic50_nM": 9, "source": "PMID:21465538", "type": "clinical"},
+                {"name": "DGAT1-LUNG-003", "ic50_nM": 18, "source": "Designed", "type": "lung-targeted"},
             ],
         }
         
