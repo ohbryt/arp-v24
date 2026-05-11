@@ -467,32 +467,107 @@ ARP Pipeline Flow:
 
 ---
 
-## 13. Complete Technology Stack
+## 15. SLiMNet: Protein Motif Discovery
+
+### 15.1 SLiMNet Framework
+
+**Reference:** McFee & Kim 2026, bioRxiv (doi:10.64898/2026.05.04.722713)
+
+**What:** Deep learning to detect Short Linear Motifs (SLiMs) using ESM2 protein language model embeddings
+
+**SLiM:** 3-15 amino acid segments in IDRs (Intrinsically Disordered Regions)
+
+### 15.2 SLiMNet Architecture
+
+```
+Input: Two k-mer/motif sequences
+    ↓
+ESM2 (protein language model, 650M params)
+    ↓
+Extract motif residues (final layer)
+    ↓
+Average → motif-level embedding
+    ↓
+SLiMNet (shared weights, MLP)
+    ↓
+Similarity score (shared function)
+```
+
+### 15.3 Performance
+
+| Task | Metric | Value |
+|------|--------|-------|
+| Hold-out motifs | AUCROC | 0.81 |
+| Hold-out motifs | Avg Precision | 0.71 |
+| Cyclin binding | AUCROC | 0.78 |
+| Binding-IDR | AUCROC | 0.78 |
+
+### 15.4 ARP Integration
+
+| Application | Use Case |
+|------------|----------|
+| **Ferroptosis** | FSP1, SLC7A11, GPX4 interaction motifs |
+| **Drug-target** | Binding strength prediction |
+| **DGAT1** | Protein-protein interaction sites |
+| **Biomarker** | Functional motif pairs |
+
+### 15.5 Ferroptosis Motif Analysis
+
+```python
+ferroptosis_proteins = [
+    "FSP1",      # Ferroptosis suppressor
+    "SLC7A11",   # System xc-
+    "GPX4",       # Glutathione peroxidase
+    "DGAT1",      # TAG synthesis
+    "ACSL4",      # Ferroptosis executor
+]
+
+# ESM2 embeddings → SLiMNet → Motif pairs
+for protein in ferroptosis_proteins:
+    seq = fetch_protein_sequence(protein)
+    motifs = predict_SLIMs(seq)  # ELM/MoMaP
+    embeddings = esm2.extract(motifs)
+    pairs = find_functional_pairs(embeddings)
+```
+
+### 15.6 ESM2 + Boltz-2 Integration
+
+```
+ESM2 (embeddings)
+    ↓
+SLiMNet (motif discovery)
+    ↓
+Boltz-2 (structure + affinity)
+    ↓
+Druggable motif targets
+```
+
+---
+
+## 16. Complete Technology Stack
 
 | Layer | Tools | Purpose |
 |-------|-------|---------|
-| **Data** | Python, scanpy, pandas, numpy | Multi-omics processing |
-| **Target ID** | arp_orchestrator.py | Playbook-based discovery |
-| **Molecular Design** | Boltz-2, LinkLlama | Structure + affinity |
-| **Binding Prediction** | Boltz-2 affinity module | Protein-ligand docking |
+| **Protein LLMs** | ESM2, Boltz-2 | Structure + motifs |
+| **Motif Discovery** | SLiMNet | SLiM detection |
+| **Target ID** | arp_orchestrator.py | Playbook orchestration |
+| **Molecular Design** | LinkLlama | Linker design |
 | **ML Biomarkers** | scikit-learn, XGBoost, PyTorch | Patient stratification |
-| **PK/PD Modeling** | PD Union framework | Dose prediction |
-| **Visualization** | matplotlib, seaborn, plotly | Results |
+| **PK/PD** | PD Union framework | Dose modeling |
 | **Version Control** | Git + GitHub | Reproducibility |
 
 ---
 
-## 14. Key References
+## 17. Key References
 
-1. **Pharmaceuticals 2026**: Generative AI in drug discovery (Rentosertib pathway)
+1. **Pharmaceuticals 2026**: Generative AI (Rentosertib pathway)
 2. **Briefings in Bioinformatics 2026**: Boltz-2 benchmarking
-3. **medRxiv 2026**: PD Union automated PK/PD modeling
-4. **Nature 2025**: FSP1 in lung cancer (80% tumor reduction)
-5. **PNAS 2025**: FSEN1 co-crystal structure
-6. **Cell Metabolism 2026**: EVT0185 dual ACLY/ACSS2 in MASH
-7. **TCGA/GEO**: SLC7A11 LUAD bioinformatics (Larry report)
+3. **medRxiv 2026**: PD Union automated PK/PD
+4. **bioRxiv 2026**: SLiMNet motif detection
+5. **Nature 2025**: FSP1 in lung cancer
+6. **Cell Metabolism 2026**: EVT0185 ACLY/ACSS2
 
 ---
 
 *Report generated: 2026-05-11 | ARP v24*
-*Enhanced: PD Union PK/PD automation integration*
+*Enhanced: SLiMNet + ESM2 + Boltz-2 + PD Union integration*
