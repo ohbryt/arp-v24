@@ -344,41 +344,155 @@ CBMS = 0.30 * FRS + 0.25 * NRF2 + 0.25 * TMS + 0.20 * TFCS
 
 ---
 
-## 10. Files
+## 12. PK/PD Automation: PD Union Integration
 
-| File | Purpose |
-|------|---------|
-| `ARP_PIPELINE_ENHANCEMENT_2026.md` | This document |
-| `FSP1_DEVELOPMENT_PLAN_2026.md` | FSP1 preclinical |
-| `ML_BIOMARKER_STRATEGY_2026.md` | ML biomarkers |
-| `ACLY_ACSS2_DEVELOPMENT_PLAN_2026.md` | MASH program |
-| `boltz2_client.py` | Binding prediction |
-| `arp_orchestrator.py` | Playbook orchestration |
-| `SLC7A11 bioinformatics` | Larry's LUAD analysis |
+### 12.1 PD Union Framework
+
+**Reference:** Du et al. 2026, medRxiv preprint (doi:10.64898/2026.05.05.26352278)
+
+**Problem:** Traditional PD modeling requires manual model selection, repeated equation rewriting, and empirical parameter adjustment.
+
+**Solution:** Unified mechanistic skeleton + ML-assisted structure identification
+
+### 12.2 PD Union Architecture
+
+```
+Input: Population PK/PD time series
+    ↓
+Unified Mechanistic Skeleton
+├── Absorption/Exposure module
+├── Receptor module
+├── Delay module
+├── Primary PD function
+├── Feedback module
+├── Circadian modulation
+├── Disease state module
+└── Second PD axis modules
+    ↓
+AI-Assisted Structure Identification
+├── ML pattern recognition
+└── Candidate structure ranking
+    ↓
+Parameter Fitting (L-BFGS-B)
+    ↓
+Output: Mechanistic PD model (interpretable)
+```
+
+### 12.3 Performance
+
+| Metric | Value |
+|--------|-------|
+| Structure identification (NRMSE) | 0.7600 |
+| Macro-average F1 | 0.6307 |
+| Parameter fitting NRMSE (mean) | 0.146 |
+| Parameter fitting NRMSE (median) | 0.117 |
+| Literature validation | 14/15 outperformed original |
+
+### 12.4 ARP PK/PD Integration
+
+| Application | Use Case |
+|-------------|----------|
+| **FSP1i PK/PD** | Predict human dose from mouse PK |
+| **Biomarker modeling** | FRS, CBMS time-course |
+| **Clinical trial simulation** | Virtual patient PK/PD |
+| **Drug combination** | Additive/synergistic PD modeling |
+| **ACLY/ACSS2i** | Liver exposure-PD relationship |
+
+### 12.5 Implementation Concept
+
+```python
+# PD Union for ARP Pipeline
+class ARPPKPDModel:
+    """Automated PK/PD modeling for ARP compounds"""
+    
+    def __init__(self, compound, target):
+        self.compound = compound
+        self.target = target
+        self.skeleton = UnifiedSkeleton()
+        
+    def fit(self, time_series_data):
+        # Step 1: ML-assisted structure identification
+        structure = self.skeleton.identify(
+            time_series_data,
+            ml_assisted=True
+        )
+        
+        # Step 2: Parameter optimization
+        params = optimize_params(
+            structure,
+            time_series_data,
+            method='L-BFGS-B'
+        )
+        
+        # Step 3: Model validation
+        diagnostics = validate_model(params)
+        
+        return MechanisticModel(structure, params, diagnostics)
+    
+    def predict_human_dose(self, animal_pk):
+        """Allometric scaling + PD Union model"""
+        human_pk = allometric_scale(animal_pk)
+        return self.model.predict(human_pk)
+```
+
+### 12.6 Integration with Existing Pipeline
+
+```
+ARP Pipeline Flow:
+│
+├── Target ID (arp_orchestrator.py)
+│
+├── Molecular Design (boltz2_client.py)
+│
+├── In vitro assay → IC50, selectivity
+│
+├── In vivo PK/PD (mouse models)
+│   ↓
+│   PD Union Model (automated)
+│   ├── Structure identification
+│   ├── Parameter fitting
+│   └── Model validation
+│
+├── ML Biomarker (ML_BIOMARKER_STRATEGY)
+│   ├── FRS
+│   ├── NRF2 score
+│   ├── TMS
+│   └── CBMS
+│
+└── Clinical Trial Design
+    ├── Patient stratification
+    ├── Dose prediction
+    └── PK/PD simulation
+```
 
 ---
 
-## 11. Conclusion
+## 13. Complete Technology Stack
 
-Rentosertib Phase IIa success proves that **AI-driven drug discovery** works end-to-end:
-
-> *18 months, ~$150K, first-in-class target → Phase IIa success*
-
-Our FSP1 program follows the same path:
-- **Target:** FSP1 (first-in-class, validated by Nature 2025)
-- **Design:** Boltz-2 + generative chemistry
-- **Biomarker:** ML Composite Score (CBMS)
-- **Timeline:** 33-42 months to IND
-- **Cost:** $15-35M
-
-The **Generative AI Continuum** enables a self-improving cycle where:
-1. Multi-omics data informs targets
-2. Generated molecules inform biomarkers
-3. Clinical outcomes refine targets
-
-This is the architecture for a **Brown Biotech AI Drug Discovery** platform capable of competing with traditional pharma at a fraction of the cost and time.
+| Layer | Tools | Purpose |
+|-------|-------|---------|
+| **Data** | Python, scanpy, pandas, numpy | Multi-omics processing |
+| **Target ID** | arp_orchestrator.py | Playbook-based discovery |
+| **Molecular Design** | Boltz-2, LinkLlama | Structure + affinity |
+| **Binding Prediction** | Boltz-2 affinity module | Protein-ligand docking |
+| **ML Biomarkers** | scikit-learn, XGBoost, PyTorch | Patient stratification |
+| **PK/PD Modeling** | PD Union framework | Dose prediction |
+| **Visualization** | matplotlib, seaborn, plotly | Results |
+| **Version Control** | Git + GitHub | Reproducibility |
 
 ---
 
-*Report generated: 2026-05-11 | ARP v24*  
-*Reference: Rentosertib pathway (Pharmaceuticals 2026) + Boltz-2 (Briefings in Bioinformatics 2026)*
+## 14. Key References
+
+1. **Pharmaceuticals 2026**: Generative AI in drug discovery (Rentosertib pathway)
+2. **Briefings in Bioinformatics 2026**: Boltz-2 benchmarking
+3. **medRxiv 2026**: PD Union automated PK/PD modeling
+4. **Nature 2025**: FSP1 in lung cancer (80% tumor reduction)
+5. **PNAS 2025**: FSEN1 co-crystal structure
+6. **Cell Metabolism 2026**: EVT0185 dual ACLY/ACSS2 in MASH
+7. **TCGA/GEO**: SLC7A11 LUAD bioinformatics (Larry report)
+
+---
+
+*Report generated: 2026-05-11 | ARP v24*
+*Enhanced: PD Union PK/PD automation integration*
