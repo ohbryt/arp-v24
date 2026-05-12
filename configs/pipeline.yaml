@@ -1,0 +1,29 @@
+pipeline:
+  version: "24.0"
+  experiment_id: "sirna-pf14-2026"
+  workstream: "lung-cancer"
+  branch: "yars2-sirna-pf14-2026"
+  created: "2026-03-01"
+  status: "active"
+
+targets:
+  primary: ["YARS2"]
+  secondary: ["DGAT1", "FSP1", "SLC7A11"]
+
+metadata:
+  owner: "DRCMOH"
+  organization: "Brown Biotech AI Drug Discovery"
+  contact: "DRCMOH"
+
+experiment:
+  description: "siRNA PF14 delivery to lung, YARS2 knockdown"
+  started: "2026-03-01"
+  phase: "preclinical"
+
+integrations:
+  boltz2: true
+  linkllama: true
+  iterative_evaluation: true
+  scoring_rubric: true
+  evidence_level: true
+  smolm: true

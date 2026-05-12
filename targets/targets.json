@@ -1,0 +1,34 @@
+{
+  "targets": [
+    {
+      "target_id": "YARS2",
+      "aliases": ["YARS2", "yars2", "Tyrosyl-tRNA Synthetase"],
+      "project_tags": ["sarcopenia", "sirna", "pf14", "lung"],
+      "status": "active",
+      "created": "2026-03-01"
+    },
+    {
+      "target_id": "DGAT1",
+      "aliases": ["DGAT1", "Diacylglycerol O-Acyltransferase 1"],
+      "project_tags": ["masld", "nsclc", "ferroptosis", "lipid"],
+      "status": "active",
+      "created": "2026-03-15"
+    },
+    {
+      "target_id": "FSP1",
+      "aliases": ["FSP1", "AIFM2", "Ferroptosis Suppressor Protein 1"],
+      "project_tags": ["nsclc", "ferroptosis", "keap1", "stk11"],
+      "status": "active",
+      "created": "2026-05-01"
+    },
+    {
+      "target_id": "SLC7A11",
+      "aliases": ["SLC7A11", "xCT", "System xc-"],
+      "project_tags": ["nsclc", "ferroptosis", "gpx4"],
+      "status": "active",
+      "created": "2026-04-01"
+    }
+  ],
+  "version": "1.0",
+  "last_updated": "2026-05-13"
+}
