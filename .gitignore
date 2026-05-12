@@ -7,3 +7,30 @@ __pycache__/
 dist/
 build/
 .omc/
+
+# Cache and temporary
+.cache/
+.provenance/
+.regent/
+
+# Large data
+slc7a11_lung_cancer/data/
+slc7a11_lung_cancer/figures/
+sarcopenia_pipeline/results/
+ai_integration/results/
+protein_structure_analysis/
+
+# Skills
+skills/gstack/
+skills/orchestration-skills/
+skills/orchestration_skills/
+
+# Large PDFs
+*.pdf
+
+# Secrets (specific patterns)
+*api_key*
+*secret*
+*token*
+*password*
+RUNPOD_API_KEY
