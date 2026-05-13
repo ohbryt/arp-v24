@@ -189,6 +189,36 @@ def get_masld_workflow():
     ]
 
 
+def get_denovo_enzyme_workflow():
+    """
+    Enhanced de novo enzyme design workflow using RFdiffusion2.
+    
+    Based on: Kim, Woodbury, Ahern et al. Nature 2026 (s41586-025-09746-w)
+    - Flow-matching generative model
+    - Quantum chemistry-derived active site geometry
+    - Metallohydrolase design (kcat/KM up to 53,000 M⁻¹s⁻¹)
+    """
+    return [
+        {"agent": "literature", "action": "search_pubmed", 
+         "query": "RFdiffusion2 metallohydrolase enzyme design", "output": "pmids"},
+        {"agent": "literature", "action": "find_enzyme_designs", 
+         "targets": ["metallohydrolase", "serine_hydrolase", "zinc_protease"], 
+         "output": "enzyme_templates"},
+        {"agent": "target", "action": "get_uniprot", 
+         "gene_name": "GPX4", "output": "target_protein"},  # For ferroptosis
+        {"agent": "rfdiffusion", "action": "design_enzyme", 
+         "target_type": "metallohydrolase", "output": "denovo_enzymes"},
+        {"agent": "boltz", "action": "validate_structures", 
+         "structures": "denovo_enzymes", "output": "validated_structures"},
+        {"agent": "eval", "action": "iterative_evaluate", 
+         "candidates": "validated_structures", "output": "ranked_enzymes"},
+        {"agent": "scoring", "action": "score_enzyme", 
+         "metrics": ["kcat", "km", "kcat_km", "selectivity"], 
+         "output": "final_scores"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
+    ]
+
+
 # ============================================================
 # PROVENANCE TRACKING
 # ============================================================
