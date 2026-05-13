@@ -96,8 +96,133 @@ PLAYBOOK_STEPS = {
 }
 
 # ============================================================
+# NEW MODULE INTEGRATIONS (2026-05-13)
+# ============================================================
+# StackFeat-RL: biomarker discovery via RL
+# RegFormer: single-cell foundation model
+# MilliMap: spatial omics visualization
+# Medmarks: model selection
+# IterativeEvaluation + ScoringRubric: BioDesignBench-style
+
+def get_sarcopenia_biomarker_workflow():
+    """
+    Enhanced Sarcopenia workflow with:
+    - StackFeat-RL for stable biomarker discovery
+    - RegFormer for cell type annotation
+    - Iterative evaluation for compound ranking
+    - Scoring rubric for final evaluation
+    """
+    return [
+        {"agent": "literature", "action": "search_pubmed", 
+         "query": "sarcopenia myostatin mTOR treatment", "output": "pmids"},
+        {"agent": "literature", "action": "find_inhibitors", 
+         "targets": ["MSTN", "MTOR", "FST", "PDK4", "GDF15", "AMPK"], 
+         "output": "inhibitors"},
+        {"agent": "target", "action": "get_uniprot", 
+         "gene_name": "MSTN", "output": "uniprot"},
+        {"agent": "stackfeat", "action": "discover_genes", 
+         "pathway": "muscle", "output": "stable_biomarkers"},
+        {"agent": "regformer", "action": "cell_annotation", 
+         "data": "muscle_biopsy", "output": "cell_types"},
+        {"agent": "eval", "action": "iterative_evaluate", 
+         "candidates": "inhibitors", "output": "ranked_candidates"},
+        {"agent": "scoring", "action": "score_rubric", 
+         "output": "final_scores"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
+    ]
+
+
+def get_fsp1_ferroptosis_workflow():
+    """
+    Enhanced FSP1 workflow with:
+    - Triple ferroptosis (FSP1 + SLC7A11 + DGAT1)
+    - StackFeat-RL for ferroptosis biomarkers
+    - Boltz-2 for structure + affinity
+    - Medmarks for optimal model selection
+    """
+    return [
+        {"agent": "literature", "action": "search_pubmed", 
+         "query": "FSP1 ferroptosis NSCLC KEAP1 STK11 NFE2L2", "output": "pmids"},
+        {"agent": "literature", "action": "find_inhibitors", 
+         "targets": ["FSP1", "GPX4", "SLC7A11", "ACSL4", "DGAT1"], 
+         "output": "ferroptosis_targets"},
+        {"agent": "target", "action": "get_uniprot", 
+         "gene_name": "FSP1", "output": "uniprot"},
+        {"agent": "stackfeat", "action": "discover_genes", 
+         "pathway": "ferroptosis", "output": "ferroptosis_biomarkers"},
+        {"agent": "boltz", "action": "screen", 
+         "targets": "ferroptosis_targets", "output": "structure_predictions"},
+        {"agent": "eval", "action": "iterative_evaluate", 
+         "candidates": "structure_predictions", "output": "ranked_candidates"},
+        {"agent": "scoring", "action": "score_rubric", 
+         "output": "final_scores"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
+    ]
+
+
+def get_masld_workflow():
+    """
+    Enhanced MASLD workflow with:
+    - Dual ACLY/ACSS2 inhibition
+    - Metabolic biomarker discovery
+    - RegFormer for metabolic cell types
+    """
+    return [
+        {"agent": "literature", "action": "search_pubmed", 
+         "query": "MASLD NASH ACLY ACSS2 metabolic 2026", "output": "pmids"},
+        {"agent": "literature", "action": "find_inhibitors", 
+         "targets": ["ACLY", "ACSS2", "PPARG", "FXR", "GLP1R", "DGAT1"], 
+         "output": "masld_targets"},
+        {"agent": "target", "action": "get_uniprot", 
+         "gene_name": "ACLY", "output": "uniprot"},
+        {"agent": "stackfeat", "action": "discover_genes", 
+         "pathway": "metabolism", "output": "metabolic_biomarkers"},
+        {"agent": "regformer", "action": "cell_annotation", 
+         "data": "liver_biopsy", "output": "cell_types"},
+        {"agent": "boltz", "action": "screen", 
+         "targets": "masld_targets", "output": "structure_predictions"},
+        {"agent": "eval", "action": "iterative_evaluate", 
+         "candidates": "structure_predictions", "output": "ranked_candidates"},
+        {"agent": "scoring", "action": "score_rubric", 
+         "output": "final_scores"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
+    ]
+
+
+# ============================================================
 # PROVENANCE TRACKING
 # ============================================================
+
+@dataclass
+class ProvenanceRecord:
+    """Track source and transformation of each finding"""
+    source_pmid: Optional[str] = None
+    source_nct: Optional[str] = None
+    source_patent: Optional[str] = None
+    tool_used: str = ""
+    timestamp: str = field(default_factory=lambda: datetime.now().isoformat())
+    confidence: float = 0.5
+    evidence_level: str = "heuristic"  # real, validated, heuristic, simulated
+    
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "source_pmid": self.source_pmid,
+            "source_nct": self.source_nct,
+            "source_patent": self.source_patent,
+            "tool_used": self.tool_used,
+            "timestamp": self.timestamp,
+            "confidence": self.confidence,
+            "evidence_level": self.evidence_level,
+        }
+
+
+def create_provenance(agent: str, action: str, evidence_level: str = "heuristic") -> ProvenanceRecord:
+    """Create a provenance record for an agent action"""
+    return ProvenanceRecord(
+        tool_used=f"{agent}.{action}",
+        evidence_level=evidence_level,
+        timestamp=datetime.now().isoformat()
+    )
 @dataclass
 class Provenance:
     """Provenance tracking for evidence"""
