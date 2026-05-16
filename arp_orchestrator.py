@@ -36,7 +36,10 @@ class Playbook(Enum):
     SARCOPENIA = "sarcopenia"         # Sarcopenia drug development
     CARDIO = "cardio"               # Cardiotoxicity screening (T-World)
     MASLD = "masld"                # MASLD/NASH drug development
-    FSP1 = "fsp1"                  # FSP1 NSCLC ferroptosis (KEAP1/STK11) (Paper 1 + 2 combined)
+    FSP1 = "fsp1"                  # FSP1 NSCLC ferroptosis (KEAP1/STK11)
+    PPI_NET = "ppi_net"             # PPI-Net cancer module analysis (arXiv:2605.07838)
+    PROTEOR1 = "proteor1"            # Proteo-R1 reasoning protein design (ICML 2026)
+    MINERU = "mineru"              # MinerU document parsing (PDF → Markdown)
 
 PLAYBOOK_STEPS = {
     Playbook.DISCOVERY: [
@@ -92,6 +95,31 @@ PLAYBOOK_STEPS = {
         {"agent": "target", "action": "get_uniprot", "gene_name": "DGAT1", "output": "uniprot"},
         {"agent": "cardio", "action": "check_tworld", "output": "tworld_status"},
         {"agent": "reconcile", "action": "claim_debate", "output": "dossier"},
+    ],
+    # NEW: PPI-Net playbook (arXiv:2605.07838 - hierarchical GNN for cancer classification)
+    Playbook.PPI_NET: [
+        {"agent": "ppinet", "action": "load_networks", "output": "ppi_network + pathway_hierarchy"},
+        {"agent": "ppinet", "action": "analyze_cancer_type", "cancer_type": "LUAD", "output": "classification_results"},
+        {"agent": "ppinet", "action": "identify_modules", "cancer_type": "LUAD", "output": "oncogenic_modules"},
+        {"agent": "reconcile", "action": "claim_extraction", "output": "pathway_claims"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "final_dossier"},
+    ],
+    # NEW: Proteo-R1 playbook (ICML 2026 - reasoning protein design)
+    Playbook.PROTEOR1: [
+        {"agent": "proteor1", "action": "load_models", "output": "understanding_expert + generation_expert"},
+        {"agent": "proteor1", "action": "identify_hotspots", "target": "GPX4", "output": "critical_residues"},
+        {"agent": "proteor1", "action": "design_protein", "target": "GPX4", "output": "designed_sequences"},
+        {"agent": "proteor1", "action": "evaluate_design", "output": "RMSD + DockQ + perplexity"},
+        {"agent": "reconcile", "action": "claim_debate", "output": "final_dossier"},
+    ],
+    # NEW: MinerU playbook (document parsing for initial screening)
+    Playbook.MINERU: [
+        {"agent": "mineru", "action": "load_models", "output": "mineru_ready"},
+        {"agent": "mineru", "action": "extract_content", "file": "manuscript.pdf", "output": "full_text"},
+        {"agent": "mineru", "action": "extract_references", "output": "reference_list"},
+        {"agent": "mineru", "action": "check_citation_alignment", "output": "alignment_report"},
+        {"agent": "mineru", "action": "extract_figures_tables", "output": "figures_tables"},
+        {"agent": "reconcile", "action": "format_check", "output": "screening_report"},
     ],
 }
 
